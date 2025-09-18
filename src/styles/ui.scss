@@ -1,0 +1,963 @@
+@use '@/styles/common/variables';
+//Переключатель в Header (Для дома или бизнеса)
+.switch {
+  position: relative;
+  width: 234px;
+  height: 48px;
+
+
+  & input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    border: 1px solid #EFEFEF;
+    background: #F6F6F6;
+    transition: 0.3s;
+
+    &::after, &::before {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #3C3E4D;
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: variables.$Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+
+    }
+
+    &::before {
+      content: 'Для дома';
+      left: 28px;
+    }
+
+    &::after {
+      content: 'Для бизнеса';
+      right: 18px;
+    }
+
+    &:checked {
+      &::after, {
+        color: #3C3E4D;
+
+      }
+
+      &::before {
+        color: #fff;
+      }
+
+
+      + label {
+        left: 6px;
+        right: 118px;
+        background: #F60;
+        transition: left 0.3s, right 0.2s 0.1s;
+      }
+    }
+
+    &:not(:checked) {
+      &::before {
+        color: #3C3E4D;
+        transition: color 0.3s;
+      }
+
+      &::after {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      + label {
+        left: 118px;
+        right: 6px;
+        background: #F60;
+        transition: right 0.3s, left 0.2s 0.1s;
+      }
+    }
+  }
+
+  & label {
+    position: absolute;
+    z-index: 1;
+    top: 4px;
+    bottom: 4px;
+    border-radius: 8px;
+  }
+
+  &.header-mobile {
+    display: none;
+  }
+
+  &.footer-desktop {
+    & input {
+      border-radius: 13px;
+      border: 1px solid #808AC9;
+      background: #606694;
+
+      &:checked {
+        &::after, &::before {
+          color: #fff;
+        }
+      }
+
+      &:not(:checked) {
+        &::before {
+          color: #fff;
+          transition: color 0.3s;
+        }
+
+        &::after {
+          color: #fff;
+          transition: color 0.3s;
+        }
+
+
+      }
+    }
+  }
+}
+
+//Переключатель городов
+.cities {
+  position: relative;
+
+  &__select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &-city {
+      color: #29316F;
+      font-family: variables.$Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      border-bottom: 1px dashed #29316F;
+    }
+
+    &-icon {
+      display: none;
+
+    }
+
+  }
+
+  &__list {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    transform: translateY(-10px);
+    overflow: hidden;
+    transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s linear variables.$time;
+
+    &-item {
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #292929;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      white-space: nowrap;
+      cursor: pointer;
+      background-color: transparent;
+      transition: background-color variables.$time ease;
+
+      & svg {
+        fill: #FF6600;
+        transition: fill variables.$time ease;
+
+      }
+
+      &.active {
+        background-color: #F60;
+        color: #fff;
+
+        & svg {
+          fill: #fff;
+        }
+      }
+
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s;
+
+
+    }
+  }
+
+  &.header-mobile {
+    display: none;
+  }
+
+  &.footer-desktop {
+    & button {
+      & svg {
+        & path {
+          &:first-child {
+            fill: #fff;
+          }
+        }
+      }
+
+      & span {
+        color: #FFF;
+        border-bottom: 1px dashed #fff;
+      }
+    }
+  }
+
+}
+
+//Контакты в шапке (используется так же в мобильном меню)
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &__title {
+    max-width: 100px;
+    width: 100%;
+    color: #3C3E4D;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: variables.$Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20.48px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    &-numbers {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      & a {
+        color: #292929;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: variables.$Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20.48px;
+
+        & span {
+          color: #292929;
+          font-variant-numeric: lining-nums proportional-nums;
+          font-family: variables.$Raleway;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 20.48px;
+        }
+      }
+    }
+
+  }
+
+  &.header-mobile {
+    display: none;
+  }
+}
+
+// Выпадающий поиск в шапку
+.search__header-form {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 571px;
+  gap: 15px;
+  border-radius: 40px;
+  background: #FFF;
+  padding: 32px;
+  z-index: 999;
+  transform: translateY(-10px);
+  transition: transform variables.$time ease, opacity variables.$time ease, visibility 0s linear variables.$time;
+
+  &-input {
+    width: 100%;
+    height: 48px;
+    border-radius: 13px;
+    border: 1px solid #F1F1F1;
+    background: #F8F8F8;
+    padding: 16px;
+
+    &::placeholder {
+      color: #ACACAC;
+      font-family: variables.$Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    &:not(:placeholder-shown) {
+      color: #1D2023;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: variables.$Raleway;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+  }
+
+  &-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background-color: #F60;
+    padding: 15px 20px;
+    color: #FFF;
+    font-family: variables.$Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+    transition: background-color variables.$time ease;
+
+    &:hover {
+      background-color: #FF822E;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: transform variables.$time ease, visibility 0s;
+  }
+}
+
+//Бокове меню в десктопе в шапке
+.aside__menu {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  z-index: 1000;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(41, 49, 111, 0.19);
+  backdrop-filter: blur(10.149999618530273px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+  &-nav {
+    max-width: 521px;
+    width: 100%;
+    height: 100%;
+    padding: 90px 40px;
+    border-radius: 0 0 0 40px;
+    background: #FFF;
+    box-shadow: 0 0 24.1px 14px rgba(41, 49, 111, 0.21);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s linear variables.$time;
+
+    &-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      & li {
+
+        & a {
+          padding: 20px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          color: #292929;
+          font-family: variables.$Raleway;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+
+          & div {
+            display: flex;
+            align-items: center;
+            gap: 39px;
+
+            & svg {
+              flex-shrink: 0;
+            }
+          }
+
+          & svg {
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(0);
+      transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s;
+
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity variables.$time ease, visibility 0s;
+  }
+}
+
+//Картчока активностей (интернет,оборудование и так далее)
+.activities__item {
+  position: relative;
+
+  &-content {
+    display: flex;
+    flex: 0 0 112px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 18px;
+
+    &-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 112px;
+      height: 112px;
+      background-color: #F2F3F7;
+      border-radius: 30px;
+    }
+
+    &-title {
+      color: #29316F;
+      font-family: variables.$Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+
+
+}
+
+//Карточка тарифов
+.tariffs__item {
+  position: relative;
+  width: max-content;
+  cursor: pointer;
+  padding: 35px 4px 4px 4px;
+  transform: translateY(0);
+  transition: transform variables.$time ease;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 27px;
+    padding: 21px 21px 25px 21px;
+    position: relative;
+    border-radius: 24px;
+    background: #FFF;
+    overflow: hidden;
+
+    &-speed {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-meaning {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+          color: #29316F;
+          font-variant-numeric: lining-nums proportional-nums;
+          font-family: variables.$Raleway;
+          font-size: 28px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.5px;
+        }
+
+        &-value {
+          color: #29316F;
+          font-variant-numeric: lining-nums proportional-nums;
+          font-family: variables.$Raleway;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+
+    &-price {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #3C3E4D;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+
+      & span {
+        color: #292929;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: variables.$Raleway;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+      }
+    }
+
+    &-connect {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 29px;
+      border-radius: 13px;
+      border: 1px solid #F60;
+      background-color: transparent;
+      color: #F60;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      transition: color variables.$time ease, background-color variables.$time ease, border variables.$time ease;
+
+
+    }
+
+  }
+
+  &-title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFF;
+    font-family: variables.$Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 115%;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    border-radius: 28px;
+    background: #F60;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity variables.$time ease, box-shadow variables.$time ease, visibility 0s linear variables.$time;
+  }
+
+  &:hover {
+    transform: translateY(16px);
+    transition: transform variables.$time ease;
+
+    &::before {
+      opacity: 1;
+      visibility: visible;
+      box-shadow: 0 203px 57px 0 rgba(0, 0, 0, 0.00), 0 130px 52px 0 rgba(0, 0, 0, 0.01), 0 73px 44px 0 rgba(0, 0, 0, 0.05), 0 33px 33px 0 rgba(0, 0, 0, 0.09), 0 8px 18px 0 rgba(0, 0, 0, 0.10);
+      transition: opacity variables.$time ease, box-shadow variables.$time ease, visibility 0s;
+    }
+
+  }
+
+  &:hover &-content {
+    &-connect {
+      background-color: #F60;
+      color: #fff;
+      border: 1px solid transparent;
+      transition: color variables.$time ease, background-color variables.$time ease, border variables.$time ease;
+
+      &:hover {
+        background-color: #FF822E;
+        transition: background-color variables.$time ease;
+      }
+    }
+  }
+
+  &:hover &-title {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity variables.$time ease, visibility 0s;
+  }
+}
+
+//Поиск на главной как отдельный блок и на странице интернет
+.internet__search {
+  padding-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    border-radius: 20px;
+    background: #F0F2F7;
+    padding: 34px 38px;
+  }
+
+  &-title {
+    color: #292929;
+    font-family: variables.$Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.5px;
+  }
+
+  &-form {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+
+    &-input {
+      width: 100%;
+      height: 54px;
+      border-radius: 13px;
+      border: 1px solid #E4E4E4;
+      background: #FFF;
+      padding: 18px 21px;
+    }
+
+    &-btn {
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 29px;
+      color: #FFF;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      border-radius: 13px;
+      background-color: #F60;
+      transition: background-color variables.$time ease;
+
+      &:hover {
+        background-color: #FF822E;
+      }
+
+    }
+  }
+
+  &-link {
+    color: #29316F;
+    font-family: variables.$Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 5%;
+    text-underline-offset: 21%;
+    text-underline-position: from-font;
+    transition: color variables.$time ease;
+
+    &:hover {
+      color: #F60;
+    }
+  }
+}
+
+//Карточка новости в слайдере новостей
+.news__item {
+  position: relative;
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-img {
+      width: 100%;
+      height: clamp(12.5rem, 11.851rem + 2.88vw, 15.313rem);
+      border-radius: 20px;
+      overflow: hidden;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      &-date {
+        color: #3C3E4D;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: variables.$Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      &-title {
+        color: #292929;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: variables.$Raleway;
+        font-size: clamp(1.125rem, 1.038rem + 0.38vw, 1.5rem);
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+      }
+
+      &-link {
+        position: relative;
+        z-index: 1;
+        color: #29316F;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: variables.$Raleway;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+//Форма на странице - Техническая поддержка
+.support__form {
+  &-wrapper {
+    padding: 70px;
+    border-radius: 16px;
+    background: #F2F3F7;
+
+  }
+
+  &-title {
+    color: #292929;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: variables.$Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+  }
+
+  &-fields {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & input {
+      width: 50%;
+      height: 50px;
+      border-radius: 13px;
+      border: 1px solid #D8D8D8;
+      background: #FFF;
+      padding: 16px 18px;
+      color: #959595;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
+  &-message {
+    width: 100%;
+    height: 80px;
+    resize: none;
+    border-radius: 13px;
+    border: 1px solid #D8D8D8;
+    background: #FFF;
+    padding: 16px 18px;
+    color: #959595;
+    font-family: variables.$Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    & button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 29px;
+      color: #FFF;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      border-radius: 13px;
+      background: #F60;
+    }
+
+    &-licenses {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      & input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        border: 1px solid #8E8E8E;
+
+        &:checked {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11' viewBox='0 0 14 11' fill='none'%3E%3Cpath d='M12 2L5.33333 9L2 5.5M11.9999 2L5.33319 9' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-color:#F60 ;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      & label {
+        color: #3C3E4D;
+        font-family: variables.$Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        & a {
+          color: #F60;
+          font-family: variables.$Raleway;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: 7%;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+        }
+      }
+    }
+  }
+}

@@ -1,199 +1,49 @@
 @use '@/styles/common/variables';
 
 .header {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  position: relative;
+  z-index: 999;
 
-  &__wrapper {
+  &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #FFF;
+    padding-top: clamp(0.688rem, 0.385rem + 1.35vw, 2rem);
+    padding-bottom: clamp(1.25rem, 1.077rem + 0.77vw, 2rem);
 
+  }
+
+  &__wrapper {
+    position: relative;
+    transition: box-shadow variables.$time ease;
+
+    &.active {
+      box-shadow: 0 0 10.4px 0 rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 16px;
+
+    &-logo {
+      width: clamp(8.75rem, 7.856rem + 3.97vw, 12.625rem);
+
+      & img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+    }
   }
 
   &__identity {
     display: flex;
     align-items: center;
     gap: 30px;
-
-    &-switch {
-      position: relative;
-      width: 234px;
-      height: 48px;
-
-
-      & input {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 100%;
-        height: 100%;
-        border-radius: 13px;
-        border: 1px solid #EFEFEF;
-        background: #F6F6F6;
-        transition: 0.3s;
-
-        &::after, &::before {
-          position: absolute;
-          z-index: 2;
-          top: 50%;
-          transform: translateY(-50%);
-          color: #3C3E4D;
-          font-feature-settings: 'liga' off, 'clig' off;
-          font-family: variables.$Raleway;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-
-
-        }
-
-        &::before {
-          content: 'Для дома';
-          left: 28px;
-        }
-
-        &::after {
-          content: 'Для бизнеса';
-          right: 18px;
-        }
-
-        &:checked {
-          &::after, {
-            color: #3C3E4D;
-
-          }
-
-          &::before {
-            color: #fff;
-          }
-
-
-          + label {
-            left: 6px;
-            right: 118px;
-            background: #F60;
-            transition: left 0.3s, right 0.2s 0.1s;
-          }
-        }
-
-        &:not(:checked) {
-          &::before {
-            color: #3C3E4D;
-            transition: color 0.3s;
-          }
-
-          &::after {
-            color: #fff;
-            transition: color 0.3s;
-          }
-
-          + label {
-            left: 118px;
-            right: 6px;
-            background: #F60;
-            transition: right 0.3s, left 0.2s 0.1s;
-          }
-        }
-      }
-
-      & label {
-        position: absolute;
-        z-index: 1;
-        top: 4px;
-        bottom: 4px;
-        border-radius: 8px;
-      }
-    }
-
-    &-cities {
-      position: relative;
-
-      &-select {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-
-        &-city {
-          color: #29316F;
-          font-family: variables.$Raleway;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 24px;
-          border-bottom: 1px dashed #29316F;
-        }
-
-        &-icon {
-          display: none;
-
-        }
-
-      }
-
-      &-list {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        position: absolute;
-        top: 30px;
-        left: 0;
-        z-index: 999;
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        border-radius: 12px;
-        transform: translateY(-10px);
-        overflow: hidden;
-        transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s linear variables.$time;
-
-        &-item {
-          padding: 15px 20px;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          color: #292929;
-          font-variant-numeric: lining-nums proportional-nums;
-          font-family: variables.$Raleway;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          white-space: nowrap;
-          cursor: pointer;
-          background-color: transparent;
-          transition: background-color variables.$time ease;
-
-          & svg {
-            fill: #FF6600;
-            transition: fill variables.$time ease;
-
-          }
-
-          &.active {
-            background-color: #F60;
-            color: #fff;
-
-            & svg {
-              fill: #fff;
-            }
-          }
-
-        }
-
-        &.active {
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-          transform: translateY(0);
-          transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s;
-
-
-        }
-      }
-
-
-    }
   }
 
   &__navigation {
@@ -201,108 +51,50 @@
     align-items: center;
     gap: 24px;
 
-    &-contacts {
+    &-payment, &-account {
       display: flex;
       align-items: center;
-      gap: 24px;
+      justify-content: center;
+    }
 
-      &-title {
-        max-width: 100px;
-        width: 100%;
-        color: #3C3E4D;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: variables.$Raleway;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 20.48px;
-      }
+    &-payment {
+      border-radius: 13px;
+      background-color: #F60;
+      padding: 15px 20px;
+      color: #FFF;
+      font-family: variables.$Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.28px;
+      text-transform: uppercase;
+      transition: background-color variables.$time ease;
 
-      &-inner {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-
-        &-numbers {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-
-          & a {
-            color: #292929;
-            font-variant-numeric: lining-nums proportional-nums;
-            font-family: variables.$Raleway;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20.48px;
-
-            & span {
-              color: #292929;
-              font-variant-numeric: lining-nums proportional-nums;
-              font-family: variables.$Raleway;
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 700;
-              line-height: 20.48px;
-            }
-          }
-        }
+      &:hover {
+        background: #FF822E;
       }
     }
 
-    &-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
+    &-account {
+      border-radius: 13px;
+      border: 1px solid rgba(255, 102, 0, 0.59);
+      background-color: #FFF;
+      padding: 15px 20px;
+      color: #F60;
+      font-family: variables.$Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.28px;
+      text-transform: uppercase;
+      transition: background-color variables.$time ease, color variables.$time ease, border variables.$time ease;
 
-      & a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      &-payment {
-        border-radius: 13px;
-        background-color: #F60;
-        padding: 15px 20px;
-        color: #FFF;
-        font-family: variables.$Raleway;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 18px;
-        letter-spacing: 0.28px;
-        text-transform: uppercase;
-        transition: background-color variables.$time ease;
-
-        &:hover {
-          background: #FF822E;
-        }
-      }
-
-      &-account {
-        border-radius: 13px;
-        border: 1px solid rgba(255, 102, 0, 0.59);
-        background-color: #FFF;
-        padding: 15px 20px;
-        color: #F60;
-        font-family: variables.$Raleway;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 18px;
-        letter-spacing: 0.28px;
-        text-transform: uppercase;
-        transition: background-color variables.$time ease, color variables.$time ease, border variables.$time ease;
-
-        &:hover {
-          background-color: #FF822E;
-          color: #fff;
-          border: 1px solid transparent;
-        }
-
-
+      &:hover {
+        background-color: #FF822E;
+        color: #fff;
+        border: 1px solid transparent;
       }
     }
 
@@ -334,198 +126,143 @@
         }
       }
 
-      &-form {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        display: flex;
-        align-items: center;
-        justify-self: center;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 571px;
-        gap: 15px;
-        border-radius: 40px;
-        background: #FFF;
-        padding: 32px;
-        z-index: 999;
-        transform: translateY(-10px);
-        transition: transform variables.$time ease, opacity variables.$time ease, visibility 0s linear variables.$time;
+    }
 
-        & input {
-          width: 100%;
-          height: 48px;
-          border-radius: 13px;
-          border: 1px solid #F1F1F1;
-          background: #F8F8F8;
-          padding: 16px;
+    &-aside {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-          &::placeholder {
-            color: #ACACAC;
-            font-family: variables.$Raleway;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-          }
 
-          &:not(:placeholder-shown) {
-            color: #1D2023;
-            font-variant-numeric: lining-nums proportional-nums;
-            font-family: variables.$Raleway;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
-          }
+    }
+  }
+
+  &__mobile {
+    display: none;
+    align-items: center;
+    gap: 15px;
+
+    &-burger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & span {
+        position: relative;
+        display: block;
+        width: 28px;
+        height: 3px;
+        border-radius: 20px;
+        background-color: #3C3E4D;
+        transition: background-color variables.$time ease, transform variables.$time ease;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 28px;
+          height: 3px;
+          background: #3C3E4D;
+          border-radius: 20px;
+          transition: transfrom variables.$time ease;
+        }
+
+        &::before {
+          top: -8px;
+          transition: background-color variables.$time ease, transform variables.$time ease;
 
         }
 
-        &-btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 13px;
-          background-color: #F60;
-          padding: 15px 20px;
-          color: #FFF;
-          font-family: variables.$Raleway;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: 18px;
-          letter-spacing: 0.28px;
-          text-transform: uppercase;
-          transition: background-color variables.$time ease;
+        &::after {
+          bottom: -8px;
+          transition: background-color variables.$time ease, transform variables.$time ease;
 
-          &:hover {
-            background-color: #FF822E;
-          }
+
         }
 
-        &.active {
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-          transform: translateY(0);
-          transition: transform variables.$time ease, visibility 0s;
+      }
+
+      &.active {
+        & span {
+          background: transparent;
+
+          &::before {
+            transform: rotate(45deg);
+            top: 0;
+            background-color: #29316F;
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+            background-color: #29316F;
+          }
         }
       }
     }
 
-    &-sidebar {
-      position: relative;
+    &-call {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background-color: #F5F5F5;
+      border-radius: 4px;
+    }
 
-      &-burger {
-        position: relative;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    &-account {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background-color: #F60;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+    }
 
-        & span {
-          position: relative;
-          display: block;
-          width: 28px;
-          height: 3px;
-          border-radius: 20px;
-          background: #3C3E4D;
-          transition: transform variables.$time ease;
 
-          &::before, &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            width: 28px;
-            height: 3px;
-            background: #3C3E4D;
-            border-radius: 20px;
-            transition: transfrom variables.$time ease;
-          }
+    &-content {
+      max-width: 360px;
+      width: 100%;
+      display: none;
+      position: absolute;
+      z-index: -1;
+      top: 100%;
+      right: 0;
+      padding: 24px 15px;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(100%);
+      pointer-events: none;
+      transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s linear variables.$time;
 
-          &::before {
-            top: -8px;
-            transition: transform variables.$time ease;
+      &-nav {
+        margin-top: 24px;
 
-          }
+        &-list {
+          display: flex;
+          flex-direction: column;
 
-          &::after {
-            bottom: -8px;
-            transition: transform variables.$time ease;
+          & li {
+            & a {
+              padding: 20px 0;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
 
-          }
-        }
-      }
-
-      &-shadow {
-        position: fixed;
-        inset: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(41, 49, 111, 0.19);
-        backdrop-filter: blur(10.149999618530273px);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity variables.$time ease, visibility 0s linear variables.$time;
-
-      }
-
-      &-content {
-        position: relative;
-        max-width: 521px;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-self: end;
-        gap: 34px;
-        border-radius: 0 0 0 40px;
-        background: #FFF;
-        box-shadow: 0 0 24.1px 14px rgba(41, 49, 111, 0.21);
-        padding: 91px 49px 0 39px;
-        transform: translate(100%);
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transition: opacity variables.$time ease,transform variables.$time ease,visibility 0s linear variables.$time;
-
-        &-close {
-          position: absolute;
-          top: 23px;
-          right: 24px;
-        }
-
-        &-nav {
-          &-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-            &-item {
-              &-link {
-                padding: 20px 0;
+              & div {
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-
-                &-wrapper {
-                  display: flex;
-                  align-items: center;
-                  gap: 39px;
-                }
-
-                &-title {
-                  color: #292929;
-                  font-family: variables.$Raleway;
-                  font-size: 20px;
-                  font-style: normal;
-                  font-weight: 600;
-                  line-height: normal;
-                }
+                gap: 24px;
+                color: #292929;
+                font-family: variables.$Raleway;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
 
                 & svg {
                   flex-shrink: 0;
@@ -533,24 +270,46 @@
               }
             }
           }
+
+
         }
       }
 
-      &.active &-shadow {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-        transition: opacity variables.$time ease, visibility 0s;
-
+      &-payment {
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 13px;
+        background: #F60;
+        color: #FFF;
+        font-family: variables.$Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0.28px;
+        text-transform: uppercase;
+        margin-top: 13px;
+        margin-bottom: 26px;
       }
 
-      &.active &-content {
+      &.active {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
         transform: translateX(0);
-        transition: opacity variables.$time ease, visibility 0s,transform variables.$time ease;
+        transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s;
+
       }
     }
   }
+
 }
+
+
+
+
+
+

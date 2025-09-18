@@ -1,0 +1,223 @@
+@use '@/styles/common/variables';
+
+.footer {
+  padding-top:clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem) ;
+  padding-bottom: clamp(0rem, -0.346rem + 1.54vw, 1.5rem);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    background: #29316F url("@/assets/images/footer_bg.png") center/cover no-repeat;
+    padding: clamp(3.125rem, 2.894rem + 1.03vw, 4.125rem) clamp(0.938rem, 0.144rem + 3.53vw, 4.375rem) 40px clamp(0.938rem, 0.144rem + 3.53vw, 4.375rem);
+    border-radius: clamp(0rem, -0.288rem + 1.28vw, 1.25rem);
+
+  }
+
+  &__top {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+
+    &-branding {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      &-identity {
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+      }
+    }
+
+
+    &-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        &-item {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+
+          &-city, &-message {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: #FFF;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: variables.$Raleway;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20.48px;
+
+          }
+
+          &-links {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            & a {
+              color: #FFF;
+              font-variant-numeric: lining-nums proportional-nums;
+              font-family: variables.$Raleway;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 20.48px;
+
+              & span {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+
+      &-socials {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        & a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 40px;
+          background: #606694;
+        }
+      }
+    }
+
+
+    &-nav {
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-item {
+          &-link {
+            color: #FFF;
+            font-family: variables.$Raleway;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+
+      & button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 13px;
+        white-space: nowrap;
+        font-family: variables.$Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: 0.28px;
+        text-transform: uppercase;
+
+      }
+
+      &-pay {
+        background: #FFF;
+        color: #F60;
+        width: 181px;
+        height: 48px;
+
+      }
+
+      &-account {
+        color: #FFF;
+        background: #F60;
+        width: 181px;
+        height: 48px;
+      }
+    }
+
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-policy {
+      color: #FFF;
+      font-family: variables.$Manrope;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20.48px;
+    }
+
+    &-site {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      &-links {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        & a {
+          color: #FFF;
+          font-family: variables.$Manrope;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          &:hover {
+            color: #FFF;
+            font-family: variables.$Manrope;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: none;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
+          }
+        }
+      }
+    }
+
+    &-company {
+      color: #FFF;
+      font-family: variables.$Manrope;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20.48px;
+    }
+  }
+}

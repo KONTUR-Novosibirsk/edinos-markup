@@ -4,6 +4,9 @@ import './styles/main.scss';
 
 
 
+import './components/header/header.js';
+import './components/sliders/sliders.js';
+import './components/billing/billing.js';
 
-import './scripts/banner.js';
-import './scripts/header.js';
+
+

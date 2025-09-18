@@ -1,0 +1,9 @@
+@media(max-width: 992px) {
+  .news {
+    &__heading {
+      &-controls {
+        display: none;
+      }
+    }
+  }
+}

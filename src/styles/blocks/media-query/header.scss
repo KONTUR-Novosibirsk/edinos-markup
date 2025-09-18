@@ -1,0 +1,60 @@
+@media(max-width: 1380px) {
+  .header {
+    &__navigation {
+      align-self: end;
+      &-payment, &-account, &-search,&-aside {
+        display: none;
+      }
+    }
+
+    &__mobile {
+      display: flex;
+      &-content {
+        display: block;
+      }
+
+      &-call {
+        display: flex;
+
+      }
+
+      &-account {
+        display: flex;
+
+      }
+    }
+  }
+  .switch {
+
+    &.header-mobile {
+      display: block;
+    }
+
+    &.header-desktop {
+      display: none;
+    }
+  }
+
+  .cities {
+
+    &.header-mobile {
+      display: block;
+    }
+
+    &.header-desktop {
+      display: none;
+    }
+  }
+
+  .contacts {
+    &.header-mobile {
+      display: flex;
+    }
+
+    &.header-desktop {
+      display: none;
+    }
+  }
+
+
+}

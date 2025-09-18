@@ -1,0 +1,53 @@
+<section class="vacancy">
+    <div class="vacancy__wrapper container">
+        <h2 class="vacancy__title">
+            Вакансии
+        </h2>
+
+        <div class="vacancy__slider swiper">
+            <div class="swiper-wrapper">
+                <div class="vacancy__slider-slide swiper-slide">
+                    <div class="vacancy__slider-slide-content">
+                        <h3 class="vacancy__slider-slide-content-title">
+                            Специалист по тестированию
+                        </h3>
+                        {{>descriptionList class="vacancy__slider-slide-content-list" title="Что нужно делать:"  items=vacancy}}
+                        <span class="vacancy__slider-slide-content-price">
+                            75 000 ₽
+                        </span>
+                        <a href="#" class="vacancy__slider-slide-content-link">
+                            Откликнуться
+                        </a>
+                    </div>
+                </div>
+                <div class="vacancy__slider-slide swiper-slide">
+                    <div class="vacancy__slider-slide-content">
+                        <h3 class="vacancy__slider-slide-content-title">
+                            Специалист по тестированию
+                        </h3>
+                        {{>descriptionList class="vacancy__slider-slide-content-list" title="Что нужно делать:"  items=vacancy}}
+                        <span class="vacancy__slider-slide-content-price">
+                            75 000 ₽
+                        </span>
+                        <a href="#" class="vacancy__slider-slide-content-link">
+                            Откликнуться
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="vacancy__slider-pagination"></div>
+            <div class="vacancy__slider-controls">
+                <button class="banner__slider-controls-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M17 18.12L10.8192 12L17 5.88L15.0972 4L7 12L15.0972 20L17 18.12Z"/>
+                    </svg>
+                </button>
+                <button class="banner__slider-controls-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 5.88L13.1808 12L7 18.12L8.90283 20L17 12L8.90283 4L7 5.88Z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

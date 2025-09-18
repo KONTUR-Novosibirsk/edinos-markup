@@ -1,0 +1,19 @@
+//Адаптив для поиска на главной странице и страницы интернета
+
+@media(max-width: 568px) {
+  .internet__search {
+    &-wrapper{
+      gap: 20px;
+      padding: 32px ;
+    }
+
+    &-form{
+      flex-direction: column;
+      gap: 17px;
+
+      &-btn {
+        width: 100%;
+      }
+    }
+  }
+}

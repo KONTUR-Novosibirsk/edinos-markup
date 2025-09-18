@@ -1,0 +1,53 @@
+
+//Адаптив для слайдера в баннере
+@media(max-width: 992px) {
+  .banner {
+    &__slider {
+      &-slide {
+        &-content {
+          &-info {
+            &-note {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    &__search {
+      display: block;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .banner {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &__wrapper {
+      display: contents;
+    }
+  }
+}
+
+//Адаптив для слайдера в тарифах
+
+@media(max-width: 992px) {
+  .tariffs {
+    &__slider {
+      &-pagination {
+        display: flex;
+      }
+    }
+  }
+}
+
+//Адаптив для слайдера вакансий
+
+@media(max-width: 992px) {
+  .vacancy {
+    &__wrapper {
+      display: contents;
+    }
+  }
+}

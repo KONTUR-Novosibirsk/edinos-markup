@@ -1,0 +1,30 @@
+@media(max-width: 1030px) {
+  .footer {
+
+    &__wrapper {
+      gap: 28px;
+    }
+    &__top {
+      flex-direction: column;
+      gap: 28px;
+
+      &-buttons {
+        flex-direction: row;
+
+        &-pay {
+          width: 119px;
+        }
+
+        &-account {
+          width: 181px;
+        }
+      }
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: start;
+      gap: 16px;
+    }
+  }
+}

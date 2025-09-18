@@ -1,0 +1,76 @@
+@use '@/styles/common/variables';
+
+
+.about__description {
+  padding-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &-top {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 1.413rem + 0.38vw, 1.875rem);
+
+    h2 {
+      color: #292929;
+      font-family: variables.$Raleway;
+      font-size: clamp(2rem, 1.885rem + 0.51vw, 2.5rem);
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.5px;
+    }
+
+    & p {
+      color: #3C3E4D;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+    }
+
+
+  }
+
+  &-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    & h3 {
+      color: #292929;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-family: variables.$Raleway;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 140%;
+    }
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      list-style-position: inside;
+
+      & li {
+        color: #3C3E4D;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: variables.$Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 180%;
+        list-style-type: disc;
+      }
+    }
+  }
+}
