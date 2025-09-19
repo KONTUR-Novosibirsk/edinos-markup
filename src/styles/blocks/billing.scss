@@ -4,14 +4,16 @@
 .billing {
   padding-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
 
-  &__wrapper {
+
+
+  &__content {
     display: flex;
     align-items: center;
     gap: 20px;
   }
 
 
-  &__wallet  {
+  &__wallet {
     max-width: 897px;
     width: 100%;
     height: clamp(17.875rem, 17.5rem + 1.67vw, 19.5rem);
@@ -243,6 +245,7 @@
     border-radius: 20px;
     background: #F2F3F7;
     padding: 40px;
+
     &-content {
       display: flex;
       flex-direction: column;

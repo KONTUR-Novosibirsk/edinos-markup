@@ -5,28 +5,23 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Главная страница</title>
+    <title>Интернет</title>
 </head>
-
-
 <body>
 <div class="wrapper">
     {{> header}}
 
     <main class="main">
         {{>bannerSlider}}
-        {{>activities}}
-        {{>billing class="billing__wrapper"}}
+        {{>searchInternet title="Интернет" class="internet__title" sectionClass="internet__wrapper"}}
         {{>tariffs}}
-        {{>searchInternet}}
+        {{>equipment}}
+        {{>promoBanner title="Подключим интернет за 48 часов" caption="Скидка 50% на тариф '300 Мбит + Телевидение' на первые 3 месяца"}}
     </main>
     {{>footer}}
 
 </div>
 
 <script type="module" src="/src/main.js"></script>
-
 </body>
 </html>
-
-

@@ -92,3 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 });
+
+//Слайдер для оборудования
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderEquipment = document.querySelector('.equipment__slider');
+    if (!sliderEquipment) return;
+
+    new Swiper(sliderEquipment, {
+        slidesPerView: 'auto',
+        watchOverflow: true,
+        spaceBetween: 20,
+        breakpoints: {
+            0: {
+                spaceBetween: 8,
+            },
+            481: {
+                spaceBetween: 20,
+            },
+        },
+
+    });
+});

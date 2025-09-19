@@ -2,7 +2,8 @@
 
 @media(max-width: 568px) {
   .internet__search {
-    &-wrapper{
+
+    &-content {
       gap: 20px;
       padding: 32px ;
     }
@@ -16,4 +17,14 @@
       }
     }
   }
+}
+
+//Адаптив для промо
+
+@media(max-width: 767px) {
+.promo {
+  &__right {
+    display: none;
+  }
+}
 }

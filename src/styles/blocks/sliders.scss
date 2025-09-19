@@ -1,6 +1,6 @@
 @use '@/styles/common/variables';
 //Стили для слайдера в секции баннер
-.banner  {
+.banner {
 
   &__wrapper {
     display: flex;
@@ -265,7 +265,7 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.5px;
-    margin-bottom:clamp(1.5rem, 1.413rem + 0.38vw, 1.875rem) ;
+    margin-bottom: clamp(1.5rem, 1.413rem + 0.38vw, 1.875rem);
   }
 
   &__slider {
@@ -356,6 +356,7 @@
         }
       }
     }
+
     &-pagination {
       position: absolute;
       padding-top: clamp(1.5rem, 1.356rem + 0.64vw, 2.125rem);
@@ -386,6 +387,7 @@
 
 
     }
+
     &-controls {
       position: absolute;
       right: 40px;
@@ -417,5 +419,14 @@
         }
       }
     }
+  }
+}
+
+//Стили для слайдера оборудования
+
+.equipment__slider {
+  &-slide {
+   flex: 0 0 clamp(220px, calc((100% - 60px) / 4), 373px);
+    width: clamp(15.25rem, 13.389rem + 8.27vw, 23.313rem);
   }
 }

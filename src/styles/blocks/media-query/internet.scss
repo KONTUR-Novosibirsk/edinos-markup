@@ -1,0 +1,9 @@
+@media(max-width: 992px) {
+  .internet__equipment {
+    &-heading {
+      & a {
+        display: none;
+      }
+    }
+  }
+}

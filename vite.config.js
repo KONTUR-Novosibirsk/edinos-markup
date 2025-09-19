@@ -10,6 +10,8 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 about: resolve(__dirname, 'src/pages/about.html'),
                 support: resolve(__dirname, 'src/pages/support.html'),
+                subscriber: resolve(__dirname, 'src/pages/subscriber.html'),
+                internet: resolve(__dirname, 'src/pages/internet.html'),
             }
         }
     },
@@ -27,6 +29,7 @@ export default defineConfig({
                 resolve(__dirname, 'src/components/activities'),
                 resolve(__dirname, 'src/components/formsAndModal'),
                 resolve(__dirname, 'src/components/billing'),
+                resolve(__dirname, 'src/components/internet'),
                 resolve(__dirname, 'src/components/tariffs'),
                 resolve(__dirname, 'src/components/about'),
                 resolve(__dirname, 'src/components/footer'),
