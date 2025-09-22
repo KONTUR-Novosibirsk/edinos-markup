@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
 //Открытие модалки вакансий
 document.addEventListener('DOMContentLoaded', () => {
     // ======= МОДАЛКА =======
