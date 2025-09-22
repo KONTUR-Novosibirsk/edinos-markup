@@ -177,44 +177,50 @@
 
   &__search {
     display: none;
-    position: relative;
     width: 100%;
     height: 48px;
 
-    & input {
-      width: 100%;
-      height: 100%;
-      padding: 16px 16px 16px 47px;
-      border-radius: 13px;
-      border: 1px solid #F1F1F1;
-      background: #F8F8F8;
+   &-form {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     & input {
+       width: 100%;
+       height: 100%;
+       padding: 16px 16px 16px 47px;
+       border-radius: 13px;
+       border: 1px solid #F1F1F1;
+       background: #F8F8F8;
 
-      &::placeholder {
-        color: #ACACAC;
-        font-family: variables.$Raleway;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-      }
+       &::placeholder {
+         color: #ACACAC;
+         font-family: variables.$Raleway;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+       }
 
-      &:not(:placeholder-shown) {
-        color: #1D2023;
-        font-variant-numeric: lining-nums proportional-nums;
-        font-family: variables.$Raleway;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-      }
-    }
+       &:not(:placeholder-shown) {
+         color: #1D2023;
+         font-variant-numeric: lining-nums proportional-nums;
+         font-family: variables.$Raleway;
+         font-size: 18px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+       }
+     }
+     &-icon {
+       position: absolute;
+       top: 50%;
+       transform: translateY(-50%);
+       left: 16px;
+     }
+   }
 
-    &-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 16px;
-    }
+
+
   }
 }
 
@@ -426,7 +432,239 @@
 
 .equipment__slider {
   &-slide {
-   flex: 0 0 clamp(220px, calc((100% - 60px) / 4), 373px);
+    flex: 0 0 clamp(220px, calc((100% - 60px) / 4), 373px);
     width: clamp(15.25rem, 13.389rem + 8.27vw, 23.313rem);
+  }
+}
+
+//Стили для слайдера каналов
+
+.channels {
+  padding-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__tabs {
+    &-slider {
+      &-slide {
+        width: max-content;
+        cursor: pointer;
+
+        &-tab {
+          white-space: nowrap;
+          color: #3C3E4D;
+          font-family: variables.$Raleway;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+    }
+  }
+
+  &__contents {
+    &-slider {
+      &-slide {
+        flex: 0 0 176px;
+        height: 130px;
+        border-radius: 22px;
+        overflow: hidden;
+
+        &-img {
+          width: 100%;
+          height: 100%;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Стили для слайдер акций
+
+.promotions {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 0.798rem + 0.9vw, 1.875rem);
+  }
+
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-title {
+      color: #292929;
+      font-family: variables.$Raleway;
+      font-size: clamp(2rem, 1.885rem + 0.51vw, 2.5rem);
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.5px;
+    }
+
+    &-controls {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+
+      &-prev, &-next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 22px;
+        background: #FFF;
+        box-shadow: 0 2px 11.8px 0 rgba(0, 0, 0, 0.07);
+
+
+        & svg {
+          fill: #FF6600;
+        }
+
+        &.swiper-button-disabled {
+          & svg {
+            fill: #FEC49E;
+          }
+        }
+      }
+    }
+  }
+
+  &__slider {
+    &-slide {
+      height: clamp(23.75rem, 23.462rem + 1.28vw, 25rem);
+      border-radius: 20px;
+      overflow: hidden;
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #F2F3F7;
+        padding: 40px;
+
+        &-title {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          & span {
+            padding: 5px 19px;
+            display: flex;
+            align-items: center;
+            align-self: start;
+            justify-content: center;
+            color: #FFF;
+            font-family: variables.$Raleway;
+            font-size: clamp(1.5rem, 1.442rem + 0.26vw, 1.75rem);
+            font-style: normal;
+            font-weight: 800;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-radius: 8px;
+            background: #29316F;
+            white-space: nowrap;
+
+            &:first-child {
+              border-radius: 8px;
+              background: #F60;
+            }
+          }
+        }
+
+        &-info {
+          max-width: 357px;
+          width: 100%;
+          position: relative;
+          z-index: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          & p {
+            color: #3C3E4D;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: variables.$Raleway;
+            font-size: clamp(1rem, 0.942rem + 0.26vw, 1.25rem);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 130%;
+
+            & span {
+              color: #F60;
+              font-variant-numeric: lining-nums proportional-nums;
+              font-family: variables.$Raleway;
+              font-size: clamp(1rem, 0.942rem + 0.26vw, 1.25rem);
+              font-style: normal;
+              font-weight: 500;
+              line-height: 130%;
+            }
+          }
+
+          & a {
+            color: #29316F;
+            font-variant-numeric: lining-nums proportional-nums;
+            font-family: variables.$Raleway;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 131%;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: 8%;
+            text-underline-offset: 25%;
+            text-underline-position: from-font;
+          }
+
+        }
+
+        &-img {
+          top: 0;
+          right: 0;
+          position: absolute;
+          height: 100%;
+
+          & img {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      &:nth-child(2n) &-content {
+        background: linear-gradient(0deg, #FFF -3.2%, #8DCED8 83.42%), #F2F3F7;
+        &-title {
+          & span {
+            background:#F60 ;
+
+            &:nth-child(2) {
+              background: #29316F;
+            }
+          }
+        }
+      }
+    }
   }
 }

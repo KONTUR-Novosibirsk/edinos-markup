@@ -7,6 +7,7 @@ import './styles/main.scss';
 import './components/header/header.js';
 import './components/sliders/sliders.js';
 import './components/billing/billing.js';
+import './components/formsAndModal/formsAndModal.js';
 
 
 

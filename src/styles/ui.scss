@@ -1124,3 +1124,682 @@
   }
 
 }
+
+//Стили для модалки подключения
+
+.modal__connect {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 49, 111, 0.19);
+  backdrop-filter: blur(10.149999618530273px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+  &-wrapper {
+    position: relative;
+    max-width: 630px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 0.798rem + 0.9vw, 1.875rem);
+    padding: 60px;
+    border-radius: 20px;
+    background: #FFF;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity variables.$time ease, visibility 0s linear variables.$time, transform variables.$time ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity variables.$time ease, visibility 0s, transform variables.$time ease;
+
+    }
+  }
+
+  &-title {
+    text-align: center;
+    color: #292929;
+    font-family: variables.$Raleway;
+    font-size: clamp(1.75rem, 1.692rem + 0.26vw, 2rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.5px;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-field {
+      position: relative;
+
+      & input {
+        width: 100%;
+        border-radius: 13px;
+        padding: 16px 18px;
+        color: #959595;
+        font-family: variables.$Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: background-color variables.$time ease, border variables.$time ease;
+
+        &:placeholder-shown + label {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &:placeholder-shown {
+          background-color: #F5F5F5;
+          border: 1px solid #D8D8D8;
+          transition: background-color variables.$time ease, border variables.$time ease;
+
+        }
+
+        &:not(:placeholder-shown) {
+          border: 1px solid #6B737A;
+          background-color: #fff;
+        }
+
+        &:not(:placeholder-shown) + label {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity variables.$time ease, visibility 0s;
+
+        }
+
+      }
+
+      & label {
+        position: absolute;
+        padding: 0 4px;
+        top: -10%;
+        left: 12px;
+        transform: translateY(-15%);
+        color: #5E6368;
+        font-family: variables.$Manrope;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 99%;
+        background: #fff;
+        pointer-events: none;
+        transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+        & svg {
+          align-self: start;
+        }
+      }
+
+
+    }
+
+    &-licenses {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      & input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        background: #F60;
+
+        &:checked {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11' viewBox='0 0 14 11' fill='none'%3E%3Cpath d='M12 2L5.33333 9L2 5.5M11.9999 2L5.33319 9' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      & label {
+        color: #3C3E4D;
+        font-family: variables.$Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+
+        & a {
+          color: #F60;
+          font-family: variables.$Raleway;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: 7%;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+        }
+      }
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: #F60;
+      color: #FFF;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      height: 54px;
+    }
+  }
+
+  &-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity variables.$time ease, visibility 0s;
+
+  }
+}
+
+
+.modal__vacancy {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 49, 111, 0.19);
+  backdrop-filter: blur(10.149999618530273px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+  &-wrapper {
+    position: relative;
+    max-width: 630px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px;
+    border-radius: 20px;
+    background: #FFF;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity variables.$time ease, visibility 0s linear variables.$time, transform variables.$time ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity variables.$time ease, visibility 0s, transform variables.$time ease;
+
+    }
+  }
+
+  &-title {
+    text-align: center;
+    color: #292929;
+    font-family: variables.$Raleway;
+    font-size: clamp(1.75rem, 1.692rem + 0.26vw, 2rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    margin-bottom: clamp(1rem, 0.798rem + 0.9vw, 1.875rem);
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    &-field {
+      position: relative;
+
+      & input {
+        width: 100%;
+        border-radius: 13px;
+        padding: 16px 18px;
+        color: #959595;
+        font-family: variables.$Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: background-color variables.$time ease, border variables.$time ease;
+
+        &:placeholder-shown + label {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &:placeholder-shown {
+          background-color: #F5F5F5;
+          border: 1px solid #D8D8D8;
+          transition: background-color variables.$time ease, border variables.$time ease;
+
+        }
+
+        &:not(:placeholder-shown) {
+          border: 1px solid #6B737A;
+          background-color: #fff;
+        }
+
+        &:not(:placeholder-shown) + label {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity variables.$time ease, visibility 0s;
+
+        }
+
+      }
+
+
+      & label {
+        position: absolute;
+        padding: 0 4px;
+        top: -10%;
+        left: 12px;
+        transform: translateY(-15%);
+        color: #5E6368;
+        font-family: variables.$Manrope;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 99%;
+        background: #fff;
+        pointer-events: none;
+        transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+        & svg {
+          align-self: start;
+        }
+      }
+
+      &:first-child {
+        margin-bottom: 24px;
+      }
+
+      &:nth-child(2) {
+        margin-bottom: 18px;
+      }
+    }
+
+    &-pin {
+      margin-bottom: clamp(0.5rem, 0.212rem + 1.28vw, 1.75rem);
+
+      &-upload {
+
+        & input {
+          display: none;
+
+        }
+
+        & label {
+          width: 203px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          border-radius: 13px;
+          border: 1px solid #F60;
+          cursor: pointer;
+          color: #F60;
+          font-family: variables.$Raleway;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 18px;
+          letter-spacing: 0.32px;
+        }
+
+
+      }
+
+      &-preview {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        display: none;
+
+        &-name {
+          color: #F60;
+          font-family: variables.$Raleway;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 18px;
+          letter-spacing: 0.32px;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: none;
+          text-decoration-thickness: auto;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+        }
+      }
+    }
+
+
+    &-licenses {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: clamp(0.5rem, 0.212rem + 1.28vw, 1.75rem);
+
+      & input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        background: #F60;
+
+        &:checked {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11' viewBox='0 0 14 11' fill='none'%3E%3Cpath d='M12 2L5.33333 9L2 5.5M11.9999 2L5.33319 9' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      & label {
+        color: #3C3E4D;
+        font-family: variables.$Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+
+        & a {
+          color: #F60;
+          font-family: variables.$Raleway;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: 7%;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+        }
+      }
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: #F60;
+      color: #FFF;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      height: 54px;
+    }
+  }
+
+  &-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity variables.$time ease, visibility 0s;
+
+  }
+}
+
+.modal__buy {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(41, 49, 111, 0.19);
+  backdrop-filter: blur(10.149999618530273px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+  &-wrapper {
+    position: relative;
+    max-width: 630px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 0.798rem + 0.9vw, 1.875rem);
+    padding: 60px;
+    border-radius: 20px;
+    background: #FFF;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity variables.$time ease, visibility 0s linear variables.$time, transform variables.$time ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity variables.$time ease, visibility 0s, transform variables.$time ease;
+
+    }
+  }
+
+  &-title {
+    text-align: center;
+    color: #292929;
+    font-family: variables.$Raleway;
+    font-size: clamp(1.75rem, 1.692rem + 0.26vw, 2rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.5px;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-field {
+      position: relative;
+
+      & input {
+        width: 100%;
+        border-radius: 13px;
+        padding: 16px 18px;
+        color: #959595;
+        font-family: variables.$Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: background-color variables.$time ease, border variables.$time ease;
+
+        &:placeholder-shown + label {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &:placeholder-shown {
+          background-color: #F5F5F5;
+          border: 1px solid #D8D8D8;
+          transition: background-color variables.$time ease, border variables.$time ease;
+
+        }
+
+        &:not(:placeholder-shown) {
+          border: 1px solid #6B737A;
+          background-color: #fff;
+        }
+
+        &:not(:placeholder-shown) + label {
+          opacity: 1;
+          visibility: visible;
+          transition: opacity variables.$time ease, visibility 0s;
+
+        }
+
+      }
+
+      & label {
+        position: absolute;
+        padding: 0 4px;
+        top: -10%;
+        left: 12px;
+        transform: translateY(-15%);
+        color: #5E6368;
+        font-family: variables.$Manrope;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 99%;
+        background: #fff;
+        pointer-events: none;
+        transition: opacity variables.$time ease, visibility 0s linear variables.$time;
+
+        & svg {
+          align-self: start;
+        }
+      }
+
+
+    }
+
+    &-licenses {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      & input {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        background: #F60;
+
+        &:checked {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='11' viewBox='0 0 14 11' fill='none'%3E%3Cpath d='M12 2L5.33333 9L2 5.5M11.9999 2L5.33319 9' stroke='white' stroke-width='1.5' stroke-linecap='square' stroke-linejoin='round'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      & label {
+        color: #3C3E4D;
+        font-family: variables.$Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+
+        & a {
+          color: #F60;
+          font-family: variables.$Raleway;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: 7%;
+          text-underline-offset: auto;
+          text-underline-position: from-font;
+        }
+      }
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 13px;
+      background: #F60;
+      color: #FFF;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      letter-spacing: 0.32px;
+      text-transform: uppercase;
+      height: 54px;
+    }
+  }
+
+  &-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity variables.$time ease, visibility 0s;
+
+  }
+}

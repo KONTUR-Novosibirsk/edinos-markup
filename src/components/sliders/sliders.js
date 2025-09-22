@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import {Navigation, Pagination} from 'swiper/modules';
 
 //Слайдер для баннера
 document.addEventListener('DOMContentLoaded', () => {
@@ -64,14 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     new Swiper(sliderNews, {
         modules: [Navigation, Pagination],
-        slidesPerView: 4 ,
+        slidesPerView: 4,
         watchOverflow: true,
         spaceBetween: 18,
         navigation: {
             nextEl: '.news__heading-controls-next',
             prevEl: '.news__heading-controls-prev',
         },
-        breakpoints : {
+        breakpoints: {
             1400: {
                 slidesPerView: 4,
                 spaceBetween: 18,
@@ -111,5 +111,78 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         },
 
+    });
+});
+
+//Два слайдера каналов и контента для них
+document.addEventListener('DOMContentLoaded', () => {
+    // === ИНИЦИАЛИЗАЦИЯ ТАБОВ-СЛАЙДЕРА ===
+    const tabsSlider = new Swiper('.channels__tabs-slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 46,
+        watchOverflow: true,
+
+    });
+
+    // === ИНИЦИАЛИЗАЦИЯ КОНТЕНТНЫХ СЛАЙДЕРОВ ===
+    document.querySelectorAll('.channels__contents-slider').forEach(el => {
+        new Swiper(el, {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            watchOverflow: true,
+
+        });
+    });
+
+    const tabs = document.querySelectorAll('.channels__tabs-slider-slide');
+    const contents = document.querySelectorAll('.channels__contents-slider');
+
+    // Скрываем всё, кроме первого
+    contents.forEach((slider, i) => {
+        slider.style.display = i === 0 ? 'block' : 'none';
+    });
+
+    // === ОБРАБОТЧИК КЛИКОВ ПО ТАБАМ ===
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+
+            // Активный класс
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            // Переключаем видимость контента
+            contents.forEach(content => {
+                content.style.display = content.dataset.tab === target ? 'block' : 'none';
+            });
+        });
+    });
+});
+
+//Слайдер для секции Акции и спецпредложения
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderPromotions = document.querySelector('.promotions__slider');
+    if (!sliderPromotions) return;
+
+    new Swiper(sliderPromotions, {
+        modules: [Navigation],
+        slidesPerView: 2,
+        spaceBetween:20,
+        watchOverflow: true,
+        navigation: {
+            nextEl: '.promotions__heading-controls-next',
+            prevEl: '.promotions__heading-controls-prev',
+        },
+        breakpoints: {
+            1400: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+
+            360: {
+                slidesPerView: 1.2,
+                spaceBetween: 8,
+            },
+        }
     });
 });

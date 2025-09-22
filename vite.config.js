@@ -12,6 +12,8 @@ export default defineConfig({
                 support: resolve(__dirname, 'src/pages/support.html'),
                 subscriber: resolve(__dirname, 'src/pages/subscriber.html'),
                 internet: resolve(__dirname, 'src/pages/internet.html'),
+                tv: resolve(__dirname, 'src/pages/tv.html'),
+                VideoSurveillance: resolve(__dirname, 'src/pages/VideoSurveillance.html'),
             }
         }
     },
@@ -32,15 +34,9 @@ export default defineConfig({
                 resolve(__dirname, 'src/components/internet'),
                 resolve(__dirname, 'src/components/tariffs'),
                 resolve(__dirname, 'src/components/about'),
+                resolve(__dirname, 'src/components/channels'),
                 resolve(__dirname, 'src/components/footer'),
 
-                // resolve(__dirname, 'src/partials/header'),
-                // resolve(__dirname, 'src/partials/tariffs'),
-                // resolve(__dirname, 'src/components/indexPage/banner'),
-                // resolve(__dirname, 'src/components/indexPage/billing'),
-                // resolve(__dirname, 'src/components/indexPage/tariffs'),
-                // resolve(__dirname, 'src/components/indexPage/search'),
-                // resolve(__dirname, 'src/components/indexPage/promotions'),
 
 
             ],
