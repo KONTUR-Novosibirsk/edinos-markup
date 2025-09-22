@@ -40,6 +40,15 @@
         display: flex;
       }
     }
+    &__heading {
+      &-link {
+        display: none;
+      }
+    }
+
+    &__link {
+      display: flex;
+    }
   }
 }
 

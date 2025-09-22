@@ -1,12 +1,14 @@
 //Открытие модалки "Подлкючиться"
 document.addEventListener('DOMContentLoaded', () => {
-    const bannerBtn   = document.querySelector('.banner__slider-slide-content-info-btn');
-    const tariffsBtns  = document.querySelectorAll('.tariffs__item-content-connect'); // выбираем ВСЕ кнопки
-    const modalShadow  = document.querySelector('.modal__connect');
+    const bannerBtn = document.querySelector('.banner__slider-slide-content-info-btn');
+    const promoBtn = document.querySelector('.promo__left-link');
+    const tariffsBtns = document.querySelectorAll('.tariffs__item-content-connect');
+    const modalShadow = document.querySelector('.modal__connect');
     const modalWrapper = document.querySelector('.modal__connect-wrapper');
-    const modalClose   = document.querySelector('.modal__connect-close');
+    const modalClose = document.querySelector('.modal__connect-close');
 
-    if (!bannerBtn || !tariffsBtns.length || !modalShadow || !modalWrapper || !modalClose) return;
+    if (!modalShadow || !modalWrapper || !modalClose) return;
+
 
     const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 
@@ -25,9 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         modalWrapper.classList.remove('active');
     };
 
-    // Вешаем обработчики
-    bannerBtn.addEventListener('click', openModal);
-    tariffsBtns.forEach(btn => btn.addEventListener('click', openModal));
+    if (bannerBtn) bannerBtn.addEventListener('click', openModal);
+    if (promoBtn) promoBtn.addEventListener('click', openModal);
+
+    if (tariffsBtns.length) {
+        tariffsBtns.forEach(btn => btn.addEventListener('click', openModal));
+    }
 
     modalClose.addEventListener('click', closeModal);
 

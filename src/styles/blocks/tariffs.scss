@@ -4,9 +4,9 @@
   padding-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
 
   &__title {
-    color:  #292929;
+    color: #292929;
     font-family: variables.$Raleway;
-    font-size:clamp(2rem, 1.885rem + 0.51vw, 2.5rem);
+    font-size: clamp(2rem, 1.885rem + 0.51vw, 2.5rem);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -85,5 +85,31 @@
     }
   }
 
+  &__link {
+    max-width: 166px;
+    display: none;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    color: #F60;
+    font-family: variables.$Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.32px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 18px 29px;
+    border-radius: 13px;
+    border: 1px solid #F60;
+    background-color: transparent;
+    transition: background-color variables.$time ease, border variables.$time ease, color variables.$time ease;
 
+    &:hover {
+      background-color: #FF822E;
+      border: 1px solid transparent;
+      color: #fff;
+    }
+  }
 }
