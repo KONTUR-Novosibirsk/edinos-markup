@@ -5,10 +5,10 @@
 
     &-content {
       gap: 20px;
-      padding: 32px ;
+      padding: 32px;
     }
 
-    &-form{
+    &-form {
       flex-direction: column;
       gap: 17px;
 
@@ -22,9 +22,71 @@
 //Адаптив для промо
 
 @media(max-width: 767px) {
-.promo {
-  &__right {
-    display: none;
+  .promo {
+    &__right {
+      display: none;
+    }
   }
 }
+
+//Адаптив для страницы поисковой формы на странице Техническая поддержка
+
+@media(max-width: 992px) {
+  .support__form {
+    &-wrapper {
+      display: contents;
+    }
+    &-content {
+      padding: 32px 16px;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .support__form {
+    &-fields {
+      flex-direction: column;
+      & input {
+        width: 100%;
+      }
+    }
+    &-inner {
+      flex-direction: column-reverse;
+
+      & button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+//Адаптив для блока с вопросами
+
+@media(max-width: 992px) {
+  .faq__list {
+    grid-template-columns: repeat(2,1fr);
+    place-items: center;
+
+  }
+  .faq__item {
+    max-width: 305px;
+    width: 100%;
+  }
+
+  .faq__search-form {
+    & button {
+      display: none;
+    }
+  }
+}
+
+@media(max-width: 767px) {
+  .faq__list {
+    grid-template-columns: repeat(1,1fr);
+
+  }
+  .faq__item {
+    max-width: 100%;
+  }
 }

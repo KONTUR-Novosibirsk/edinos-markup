@@ -1,7 +1,8 @@
 //Открытие модалки "Подлкючиться"
 document.addEventListener('DOMContentLoaded', () => {
-    const bannerBtn = document.querySelector('.banner__slider-slide-content-info-btn');
+    const bannerBtn = document.querySelectorAll('.banner__slider-slide-content-info-btn');
     const promoBtn = document.querySelector('.promo__left-link');
+    const tariffsVideoBtns = document.querySelectorAll('.tariffs__video');
     const tariffsBtns = document.querySelectorAll('.tariffs__item-content-connect');
     const modalShadow = document.querySelector('.modal__connect');
     const modalWrapper = document.querySelector('.modal__connect-wrapper');
@@ -27,11 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
         modalWrapper.classList.remove('active');
     };
 
-    if (bannerBtn) bannerBtn.addEventListener('click', openModal);
     if (promoBtn) promoBtn.addEventListener('click', openModal);
 
     if (tariffsBtns.length) {
         tariffsBtns.forEach(btn => btn.addEventListener('click', openModal));
+    }
+    if (bannerBtn.length) {
+        bannerBtn.forEach(btn => btn.addEventListener('click', openModal));
+    }
+    if (tariffsVideoBtns.length) {
+        tariffsVideoBtns.forEach(btn => btn.addEventListener('click', openModal));
     }
 
     modalClose.addEventListener('click', closeModal);
@@ -44,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
 //Открытие модалки вакансий
 document.addEventListener('DOMContentLoaded', () => {
     // ======= МОДАЛКА =======
-    const vacancyBtn = document.querySelector('.vacancy__slider-slide-content-link');
+    const vacancyBtn = document.querySelectorAll('.vacancy__slider-slide-content-link');
     const modalShadow = document.querySelector('.modal__vacancy');
     const modalWrapper = document.querySelector('.modal__vacancy-wrapper');
     const modalClose = document.querySelector('.modal__vacancy-close');
 
-    if (!vacancyBtn || !modalShadow || !modalWrapper || !modalClose) return;
+    if (!modalShadow || !modalWrapper || !modalClose) return;
 
     const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
 
@@ -68,8 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
         modalWrapper.classList.remove('active');
     };
 
-    vacancyBtn.addEventListener('click', openModal);
     modalClose.addEventListener('click', closeModal);
+
+    if (vacancyBtn.length) {
+        vacancyBtn.forEach(btn => btn.addEventListener('click', openModal));
+    }
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeModal();
@@ -142,3 +151,52 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') closeModal();
     });
 })
+
+//Открытие модалки вопросов
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('.modal__support');
+    const modalWrapper = modal?.querySelector('.modal__support-wrapper');
+    const modalTitle = modal?.querySelector('.modal__support-title');
+    const modalCaption = modal?.querySelector('.modal__support-caption');
+    const modalClose = modal?.querySelector('.modal__support-close');
+
+    if (!modal || !modalWrapper || !modalTitle || !modalCaption || !modalClose) return;
+
+    const getScrollbarWidth = () => window.innerWidth - document.documentElement.clientWidth;
+
+
+    const openModal = (question, answer) => {
+        modalTitle.textContent = question;
+        modalCaption.textContent = answer;
+        modal.classList.add('active');
+        modalWrapper.classList.add('active');
+        const scrollbarWidth = getScrollbarWidth();
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        modalWrapper.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    };
+
+    document.addEventListener('click', (e) => {
+        const li = e.target.closest('.faq__item-list li');
+        if (!li) return;
+
+        const question = li.dataset.question;
+        const answer = li.dataset.answer;
+
+        openModal(question, answer);
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+});
+

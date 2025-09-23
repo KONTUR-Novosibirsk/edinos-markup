@@ -1,1 +1,29 @@
 @use '@/styles/common/variables';
+
+.faq {
+  padding-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.125rem, 0.952rem + 0.77vw, 1.875rem);
+  }
+
+  &__title {
+    color: #292929;
+    font-family: variables.$Raleway;
+    font-size: clamp(2rem, 1.885rem + 0.51vw, 2.5rem);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 1.885rem + 0.51vw, 2.5rem);
+  }
+}

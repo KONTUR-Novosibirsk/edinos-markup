@@ -1,0 +1,15 @@
+<div class="faq__item">
+    <h3 class="faq__item-title">
+        {{title}}
+    </h3>
+
+    <ul class="faq__item-list">
+        {{#each items}}
+        <li data-question="{{question}}" data-answer="{{answer}}">
+            {{question}}
+        </li>
+        {{/each}}
+    </ul>
+    <span class="faq__item-more">
+    </span>
+</div>

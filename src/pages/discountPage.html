@@ -5,22 +5,25 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Телевидение</title>
+    <title>Главная страница</title>
 </head>
+
+
 <body>
 <div class="wrapper">
     {{> header}}
 
     <main class="main">
         {{>bannerSlider}}
-        {{>tariffs itemPartial="tariffItem"  title="Телевидение"}}
-        {{>channels}}
-        {{>modalConnect}}
+        {{>aboutDescription}}
     </main>
     {{>footer}}
 
 </div>
 
 <script type="module" src="/src/main.js"></script>
+
 </body>
 </html>
+
+

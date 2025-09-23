@@ -1,4 +1,4 @@
-<section class="tariffs">
+<div class="tariffs">
     <div class="container tariffs__wrapper">
         <h2 class="tariffs__title">
             {{title}}
@@ -11,15 +11,16 @@
                     </h2>
                     <span>На услуги и подключение к сети</span>
                 </div>
-                <a href="#" class="tariffs__heading-link">
+                <a href="/src/pages/tariffsPage.html" class="tariffs__heading-link">
                     Все тарифы
                 </a>
             </div>
 
-           {{>tariffsSlider}}
+            {{>tariffsSlider itemPartial=itemPartial}}
+
         </div>
         <a href="#" class="tariffs__link">
             Все тарифы
         </a>
     </div>
-</section>
+</div>

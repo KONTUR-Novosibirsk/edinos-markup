@@ -1,0 +1,35 @@
+<section class="tariffs__tabs">
+
+    <div class="tariffs__tabs-wrapper container">
+        <div class="tariffs__tabs-inner">
+            <button class="tariffs__tabs-inner-tab active" data-tab="internet">
+                <span class="tariffs__tabs-inner-tab-img">
+                    <img src="/src/assets/images/activities_internet.png" alt="">
+                </span>
+                Интернет
+            </button>
+            <button class="tariffs__tabs-inner-tab" data-tab="tv">
+                <span class="tariffs__tabs-inner-tab-img">
+                    <img src="/src/assets/images/activities_tv.png" alt="">
+                </span>
+                Телевидение
+            </button>
+            <button class="tariffs__tabs-inner-tab" data-tab="video">
+                <span class="tariffs__tabs-inner-tab-img">
+                    <img src="/src/assets/images/activities_video.png" alt="">
+                </span>
+                Видеоконтроль
+            </button>
+            
+        </div>
+
+        <div class="tariffs__tabs-contents">
+            <div class="tariffs__tabs-contents-content active" data-tab="internet">
+                {{>tariffs itemPartial="tariffItem"}}
+            </div>
+            <div class="tariffs__tabs-contents-content" data-tab="video">
+                {{>tariffs itemPartial="tariffItemVideo"}}
+            </div>
+        </div>
+    </div>
+</section>
