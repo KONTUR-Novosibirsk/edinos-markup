@@ -1,30 +1,37 @@
 @use '@/styles/common/variables';
 
-.billing {
+.channels {
   margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
 
   &__wrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: clamp(1.5rem, 1.413rem + 0.38vw, 1.875rem);
   }
 
   &__title {
     color: #292929;
     font-family: variables.$Raleway;
-    font-size: 40px;
+    font-size: clamp(2rem, 1.885rem + 0.51vw, 2.5rem);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.5px;
   }
 
-
-  &__inner {
+  &__contents {
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 20px;
-  }
-}
+    flex-direction: column;
+    gap: clamp(1.5rem, 1.413rem + 0.38vw, 1.875rem);
 
+
+  }
+
+  &__content {
+    &-tabs {
+      position: relative;
+    }
+  }
+
+
+}

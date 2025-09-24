@@ -1,0 +1,12 @@
+<div class="tariffs__slider swiper">
+    <div class="swiper-wrapper">
+
+        {{#each tariffs}}
+        <div class="tariffs__slider-slide swiper-slide">
+            {{>  tariffs-item-main img=this.img speed=this.speed title=this.title price=this.price note=this.note}}
+        </div>
+        {{/each}}
+
+    </div>
+    <div class="tariffs__slider-pagination"></div>
+</div>

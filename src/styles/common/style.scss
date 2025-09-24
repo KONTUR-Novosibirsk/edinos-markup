@@ -48,6 +48,33 @@ select {
   cursor: pointer;
 }
 
+input {
+  &::placeholder {
+    color: #ACACAC;
+    font-family: variables.$Raleway;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &:not(:placeholder-shown) {
+    color: #1D2023;
+    font-family: variables.$Raleway;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &[type="number"] {
+    -moz-appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+
 a {
   cursor: pointer;
 }

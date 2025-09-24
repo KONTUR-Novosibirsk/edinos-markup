@@ -1,7 +1,7 @@
 @use '@/styles/common/variables';
 
 .footer {
-  padding-top:clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem) ;
+  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
   padding-bottom: clamp(0rem, -0.346rem + 1.54vw, 1.5rem);
 
   &__wrapper {

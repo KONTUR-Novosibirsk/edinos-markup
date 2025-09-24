@@ -12,14 +12,13 @@
     {{> header}}
 
     <main class="main">
-        {{>bannerSlider}}
-        {{>searchInternet title="Интернет" class="internet__title" sectionClass="internet__wrapper"}}
-        {{>tariffs itemPartial="tariffItem"}}
+        {{>banner-slider}}
+        {{>site-search}}
+        {{>search-cities}}
+        {{>tariffs-additional tariffsItem=tariffsInternet }}
         {{>equipment}}
-        {{>promoBanner title="Подключим интернет за 48 часов" caption="Скидка 50% на тариф '300 Мбит + Телевидение' на
+        {{>promo-banner title="Подключим интернет за 48 часов" caption="Скидка 50% на тариф '300 Мбит + Телевидение' на
         первые 3 месяца"}}
-        {{>modalBuy}}
-        {{>modalConnect}}
     </main>
     {{>footer}}
 
@@ -28,3 +27,6 @@
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>
+
+
+

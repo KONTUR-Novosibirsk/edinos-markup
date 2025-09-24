@@ -1,0 +1,33 @@
+<section class="tariffs">
+    <div class="tariffs__wrapper container">
+        {{#if title}}
+        <h2 class="tariffs__title">
+            {{title}}
+        </h2>
+        {{/if}}
+        <div class="tariffs__content">
+
+            <div class="tariffs__content-heading">
+                <div class="tariffs__content-heading-title">
+                    <h3>
+                        Тарифы
+                    </h3>
+                    <span>
+                       На услуги и подключение к сети
+                   </span>
+                </div>
+                <a href="{{link}}" class="tariffs__link desktop">
+                    Все тарифы
+                </a>
+            </div>
+
+            <div class="tariffs__content-inner">
+                {{>tariffs-slider}}
+            </div>
+        </div>
+
+        <a href="{{link}}" class="tariffs__link mobile">
+            Все тарифы
+        </a>
+    </div>
+</section>

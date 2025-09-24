@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.billing__wallet-inner-tabs button');
-    const tabs = document.querySelectorAll('.billing__wallet-inner-content-box');
+    const buttons = document.querySelectorAll('.wallet__tabs button');
+    const tabs = document.querySelectorAll('.wallet__contents-content');
 
     if (buttons.length > 0 && tabs.length > 0) {
         buttons[0].classList.add('active');

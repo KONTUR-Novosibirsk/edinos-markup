@@ -1,23 +1,138 @@
-//Адаптив для поиска на главной странице и страницы интернета
+//Новые стили - изменить название
 
-@media(max-width: 568px) {
-  .internet__search {
-
+@media(max-width: 992px) {
+  .banner__item {
     &-content {
-      gap: 20px;
-      padding: 32px;
+      &-note {
+        display: none;
+      }
+    }
+  }
+
+  .site__search {
+    display: block;
+  }
+
+  .wallet {
+    max-width: 100%;
+  }
+
+  .account {
+    max-width: 100%;
+
+    &__wrapper {
+      align-items: stretch;
     }
 
-    &-form {
-      flex-direction: column;
-      gap: 17px;
+    &__content {
+      height: auto;
+    }
+  }
 
-      &-btn {
-        width: 100%;
+  .showcase__controls {
+    display: none;
+  }
+}
+
+@media(max-width: 767px) {
+  .promo {
+    &__content {
+      &-img {
+        display: none;
       }
     }
   }
 }
+
+
+@media(max-width: 576px) {
+  .wallet {
+    &__wrapper {
+      gap: 20px;
+    }
+
+    &__heading {
+      flex-direction: column;
+      align-items: start;
+      gap: 13px;
+    }
+
+    &__contents {
+      &-content {
+        &-form {
+          gap: 12px;
+
+          &-fields {
+            flex-direction: column;
+            gap: 12px;
+
+            &-contract, &-price {
+              max-width: 100%;
+            }
+          }
+
+          &-btn {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    &__background {
+      display: none;
+    }
+  }
+
+  .account {
+    &__content {
+      gap: 24px;
+
+      &-text {
+        gap: 24px;
+      }
+    }
+
+    &__background {
+      display: none;
+    }
+  }
+
+  .search__cities {
+    &-content {
+      gap: 20px;
+    }
+
+    &-form {
+      flex-direction: column;
+      gap: 20px;
+
+      &-btn {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .promotion__item, .promotion__additional {
+    &-content {
+      &-text {
+        &-title {
+          gap: 13px;
+        }
+      }
+
+      &-img {
+        display: none;
+      }
+    }
+  }
+
+}
+
+
+//Старые стили
+
+//Адаптив для поиска на главной странице и страницы интернета
+
 
 //Адаптив для промо
 
@@ -36,6 +151,7 @@
     &-wrapper {
       display: contents;
     }
+
     &-content {
       padding: 32px 16px;
     }
@@ -46,10 +162,12 @@
   .support__form {
     &-fields {
       flex-direction: column;
+
       & input {
         width: 100%;
       }
     }
+
     &-inner {
       flex-direction: column-reverse;
 
@@ -65,7 +183,7 @@
 
 @media(max-width: 992px) {
   .faq__list {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     place-items: center;
 
   }
@@ -83,7 +201,7 @@
 
 @media(max-width: 767px) {
   .faq__list {
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
 
   }
   .faq__item {

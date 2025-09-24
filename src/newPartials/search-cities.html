@@ -1,0 +1,26 @@
+<section class="search__cities">
+    <div class="search__cities-wrapper container">
+        {{#if title}}
+        <h2 class="search__cities-title">
+            {{title}}
+        </h2>
+        {{/if}}
+
+        <div class="search__cities-content">
+            <h3 class="search__cities-content-title">
+                Проверьте возможность подключения по вашему адресу
+            </h3>
+            <form class="search__cities-form">
+                <label for="search-cities" class="search__cities-form-label">Поиск города</label>
+                <input type="text" id="search-cities" placeholder="Введите город, улицу, дом"
+                       class="search__cities-form-input">
+                <button class="search__cities-form-btn">
+                    Проверить
+                </button>
+            </form>
+            <a href="#" class="search__cities-content-link">
+                Где подключаем
+            </a>
+        </div>
+    </div>
+</section>

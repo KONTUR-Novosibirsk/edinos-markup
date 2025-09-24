@@ -1,25 +1,17 @@
-//Адаптив для слайдера в баннере
-@media(max-width: 992px) {
-  .banner {
-    &__slider {
-      &-slide {
-        &-content {
-          &-info {
-            &-note {
-              display: none;
-            }
-          }
-        }
-      }
-    }
+//Новые общие стили - изменить названеи
 
-    &__search {
-      display: block;
+@media(max-width: 992px) {
+  .tariffs__slider {
+    &-pagination {
+      display: flex;
     }
   }
+
 }
 
+
 @media(max-width: 767px) {
+  //Стили для слайдера - Баннер
   .banner {
     display: flex;
     flex-direction: column;
@@ -29,28 +21,11 @@
       display: contents;
     }
   }
+
 }
 
-//Адаптив для слайдера в тарифах
 
-@media(max-width: 992px) {
-  .tariffs {
-    &__slider {
-      &-pagination {
-        display: flex;
-      }
-    }
-    &__heading {
-      &-link {
-        display: none;
-      }
-    }
 
-    &__link {
-      display: flex;
-    }
-  }
-}
 
 //Адаптив для слайдера вакансий
 
@@ -64,16 +39,16 @@
 
 //Адаптив для слайдера Акций и спецпредложений
 
-@media(max-width: 992px) {
-  .promotions {
-    &__slider {
-      &-slide {
-        &-content {
-          &-img {
-            display: none;
-          }
-        }
-      }
-    }
-  }
-}
+//@media(max-width: 992px) {
+//  .promotions {
+//    &__slider {
+//      &-slide {
+//        &-content {
+//          &-img {
+//            display: none;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}

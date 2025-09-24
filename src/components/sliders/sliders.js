@@ -2,41 +2,41 @@ import Swiper from 'swiper';
 import {Navigation, Pagination} from 'swiper/modules';
 
 //Слайдер для баннера
-document.addEventListener('DOMContentLoaded', () => {
-    const sliderBanner = document.querySelector('.banner__slider');
-    if (!sliderBanner) return;
+// document.addEventListener('DOMContentLoaded', () => {
+//     const sliderBanner = document.querySelector('.banner__slider');
+//     if (!sliderBanner) return;
+//
+//     new Swiper(sliderBanner, {
+//         modules: [Navigation, Pagination],
+//         slidesPerView: 1,
+//         navigation: {
+//             nextEl: '.banner__slider-controls-next',
+//             prevEl: '.banner__slider-controls-prev',
+//         },
+//         pagination: {
+//             el: '.banner__slider-pagination',
+//             clickable: true,
+//         },
+//     });
+// });
 
-    new Swiper(sliderBanner, {
-        modules: [Navigation, Pagination],
-        slidesPerView: 1,
-        navigation: {
-            nextEl: '.banner__slider-controls-next',
-            prevEl: '.banner__slider-controls-prev',
-        },
-        pagination: {
-            el: '.banner__slider-pagination',
-            clickable: true,
-        },
-    });
-});
-
-//Слайдер для тарифов
-document.addEventListener('DOMContentLoaded', () => {
-    const sliderTariffs = document.querySelector('.tariffs__slider');
-    if (!sliderTariffs) return;
-
-    new Swiper(sliderTariffs, {
-        modules: [Navigation, Pagination],
-        slidesPerView: 'auto',
-        watchOverflow: true,
-        spaceBetween: 22,
-        pagination: {
-            el: '.tariffs__slider-pagination',
-            clickable: true,
-        },
-
-    });
-});
+// //Слайдер для тарифов
+// document.addEventListener('DOMContentLoaded', () => {
+//     const sliderTariffs = document.querySelector('.tariffs__slider');
+//     if (!sliderTariffs) return;
+//
+//     new Swiper(sliderTariffs, {
+//         modules: [Navigation, Pagination],
+//         slidesPerView: 'auto',
+//         watchOverflow: true,
+//         spaceBetween: 22,
+//         pagination: {
+//             el: '.tariffs__slider-pagination',
+//             clickable: true,
+//         },
+//
+//     });
+// });
 
 //Слайдер для вакансий
 document.addEventListener('DOMContentLoaded', () => {
@@ -93,96 +93,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//Слайдер для оборудования
-document.addEventListener('DOMContentLoaded', () => {
-    const sliderEquipment = document.querySelector('.equipment__slider');
-    if (!sliderEquipment) return;
 
-    new Swiper(sliderEquipment, {
-        slidesPerView: 'auto',
-        watchOverflow: true,
-        spaceBetween: 20,
-        breakpoints: {
-            0: {
-                spaceBetween: 8,
-            },
-            481: {
-                spaceBetween: 20,
-            },
-        },
 
-    });
-});
-
-//Два слайдера каналов и контента для них
-document.addEventListener('DOMContentLoaded', () => {
-    // === ИНИЦИАЛИЗАЦИЯ ТАБОВ-СЛАЙДЕРА ===
-    const tabsSlider = new Swiper('.channels__tabs-slider', {
-        slidesPerView: 'auto',
-        spaceBetween: 46,
-        watchOverflow: true,
-
-    });
-
-    // === ИНИЦИАЛИЗАЦИЯ КОНТЕНТНЫХ СЛАЙДЕРОВ ===
-    document.querySelectorAll('.channels__contents-slider').forEach(el => {
-        new Swiper(el, {
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            watchOverflow: true,
-
-        });
-    });
-
-    const tabs = document.querySelectorAll('.channels__tabs-slider-slide');
-    const contents = document.querySelectorAll('.channels__contents-slider');
-
-    // Скрываем всё, кроме первого
-    contents.forEach((slider, i) => {
-        slider.style.display = i === 0 ? 'block' : 'none';
-    });
-
-    // === ОБРАБОТЧИК КЛИКОВ ПО ТАБАМ ===
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.dataset.tab;
-
-            // Активный класс
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            // Переключаем видимость контента
-            contents.forEach(content => {
-                content.style.display = content.dataset.tab === target ? 'block' : 'none';
-            });
-        });
-    });
-});
-
-//Слайдер для секции Акции и спецпредложения
-document.addEventListener('DOMContentLoaded', () => {
-    const sliderPromotions = document.querySelector('.promotions__slider');
-    if (!sliderPromotions) return;
-
-    new Swiper(sliderPromotions, {
-        modules: [Navigation],
-        slidesPerView: 2,
-        spaceBetween:20,
-        watchOverflow: true,
-        navigation: {
-            nextEl: '.promotions__heading-controls-next',
-            prevEl: '.promotions__heading-controls-prev',
-        },
-        breakpoints: {
-            1400: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-
-            360: {
-                slidesPerView: 1.2,
-                spaceBetween: 8,
-            },
-        }
-    });
-});

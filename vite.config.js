@@ -24,24 +24,42 @@ export default defineConfig({
     plugins: [
         handlebars({
             partialDirectory: [
+                //Новое подключение
+                // Слайдеры - Изменить название папок
+                resolve(__dirname, 'src/newPartials'),
+                resolve(__dirname, 'src/newPartials/sliders'),
+                resolve(__dirname, 'src/newPartials/billing'),
+                resolve(__dirname, 'src/newComponents/sliders'),
+                resolve(__dirname, 'src/newComponents/activities'),
+                resolve(__dirname, 'src/newComponents/billing'),
+                resolve(__dirname, 'src/newComponents/tariffs'),
+                resolve(__dirname, 'src/newComponents/searches'),
+                resolve(__dirname, 'src/newComponents/internet'),
+                resolve(__dirname, 'src/newComponents/channels'),
+
+
                 resolve(__dirname, 'src/partials'),
                 resolve(__dirname, 'src/components'),
                 resolve(__dirname, 'src/components/header'),
                 resolve(__dirname, 'src/components/support'),
                 resolve(__dirname, 'src/components/searches'),
                 resolve(__dirname, 'src/components/sliders'),
-                resolve(__dirname, 'src/components/activities'),
                 resolve(__dirname, 'src/components/formsAndModal'),
-                resolve(__dirname, 'src/components/billing'),
+                // resolve(__dirname, 'src/components/billing'),
                 resolve(__dirname, 'src/components/internet'),
                 resolve(__dirname, 'src/components/tariffs'),
                 resolve(__dirname, 'src/components/about'),
-                resolve(__dirname, 'src/components/channels'),
                 resolve(__dirname, 'src/components/footer'),
 
 
             ],
             context: {
+                walletImages: [
+                    'src/assets/images/icons/visa.svg',
+                    'src/assets/images/icons/masterCard.svg',
+                    'src/assets/images/icons/mir.svg',
+                    'src/assets/images/icons/sbp.svg',
+                ],
                 trustList: [
                     'Более 14 лет на рынке – мы знаем всё о подключении частных домов и коттеджей.',
                     'Собственная инфраструктура – оптоволоконные сети (GPON) вместо устаревших технологий.',
@@ -86,7 +104,6 @@ export default defineConfig({
                         answer: 'Кассиры принимают оплату по номеру лицевого счёта.'
                     }
                 ],
-
                 faqInternet: [
                     {
                         question: 'Как измерить скорость интернета',
@@ -121,7 +138,6 @@ export default defineConfig({
                         answer: 'Убедитесь, что услуги оплачены, и что индикаторы на модеме горят зелёным.'
                     }
                 ],
-
                 faqPrefix: [
                     {
                         question: 'Как подключить дополнительные телеканалы, видеосервисы',
@@ -147,6 +163,190 @@ export default defineConfig({
                         question: 'Как подключить голосовой пульт на приставке Vermax',
                         answer: 'Удерживайте кнопку "OK" 5 секунд для синхронизации.'
                     }
+                ],
+                tariffs: [
+                    {
+                        title: 'Рекомендуем',
+                        speed: 100,
+                        price: '999₽',
+                        note: '240 ТВ-каналов',
+                        img: 'src/assets/images/ellipse_speed.png'
+                    },
+                    {
+                        title: 'Интернет + ТВ',
+                        speed: 300,
+                        price: '1499₽',
+                        note: '320 ТВ-каналов',
+                        img: 'src/assets/images/ellipse_speed.png'
+
+                    },
+                    {
+                        title: 'Премиум',
+                        speed: 500,
+                        price: '1999₽',
+                        note: 'Все каналы и сервисы',
+                        img: 'src/assets/images/ellipse_speed.png'
+
+                    },
+                    {
+                        title: 'Премиум',
+                        speed: 600,
+                        price: '1400',
+                        note: 'Все каналы и сервисы',
+                        img: 'src/assets/images/ellipse_speed.png'
+
+                    },
+                    {
+                        title: 'Премиум',
+                        speed: 500,
+                        price: '1999₽',
+                        note: 'Все каналы и сервисы',
+                        img: 'src/assets/images/ellipse_speed.png'
+
+                    },
+                    {
+                        title: 'Премиум',
+                        speed: 500,
+                        price: '1999₽',
+                        note: 'Все каналы и сервисы',
+                        img: 'src/assets/images/ellipse_speed.png'
+
+                    }
+                ],
+                tariffsInternet: [
+                    {
+                        title: 'Рекомендуем',
+                        speed: 100,
+                        price: '999₽',
+                        note: '240 ТВ-каналов',
+                        img: '/src/assets/images/ellipse_speed.png'
+                    },
+                    {
+                        title: 'Интернет + ТВ',
+                        speed: 300,
+                        price: '1499₽',
+                        note: '320 ТВ-каналов',
+                        img: '/src/assets/images/ellipse_speed.png'
+
+                    },
+
+
+                ],
+                tariffsTv: [
+                    {
+                        title: 'Рекомендуем',
+                        speed: 100,
+                        price: '999₽',
+                        note: '240 ТВ-каналов',
+                        img: '/src/assets/images/ellipse_speed.png'
+                    },
+                    {
+                        title: 'Интернет + ТВ',
+                        speed: 300,
+                        price: '1499₽',
+                        note: '320 ТВ-каналов',
+                        img: '/src/assets/images/ellipse_speed.png'
+
+                    },
+                    {
+                        title: 'Интернет + ТВ',
+                        speed: 300,
+                        price: '1499₽',
+                        note: '320 ТВ-каналов',
+                        img: '/src/assets/images/ellipse_speed.png'
+
+                    },
+
+
+                ],
+                channels: [
+                    {
+                        key: "all",
+                        title: "Все каналы",
+                        items: [
+                            "/src/assets/images/channels_1.png",
+                            "/src/assets/images/channels_2.png",
+                            "/src/assets/images/channels_3.png",
+                            "/src/assets/images/channels_4.png",
+                            "/src/assets/images/channels_5.png",
+                            "/src/assets/images/channels_6.png",
+                            "/src/assets/images/channels_7.png",
+                            "/src/assets/images/channels_8.png",
+
+                        ]
+                    },
+                    {
+                        key: "federal",
+                        title: "Федеральные",
+                        items: [
+                            "/src/assets/images/channels_2.png",
+                            "/src/assets/images/channels_2.png",
+                            "/src/assets/images/channels_2.png"
+                        ]
+                    },
+                    {
+                        key: "cinema",
+                        title: "Кино и сериалы",
+                        items: [
+                            "/src/assets/images/channels_3.png",
+                            "/src/assets/images/channels_3.png",
+                            "/src/assets/images/channels_3.png"
+                        ]
+                    },
+                    {
+                        key: "news",
+                        title: "Новостные",
+                        items: [
+                            "/src/assets/images/channels_4.png",
+                            "/src/assets/images/channels_4.png",
+                            "/src/assets/images/channels_4.png"
+                        ]
+                    },
+                    {
+                        key: "entertainment",
+                        title: "Развлекательные",
+                        items: [
+                            "/src/assets/images/channels_5.png",
+                            "/src/assets/images/channels_5.png",
+                            "/src/assets/images/channels_5.png"
+                        ]
+                    },
+                    {
+                        key: "cognitive",
+                        title: "Позновательные",
+                        items: [
+                            "/src/assets/images/channels_5.png",
+                            "/src/assets/images/channels_5.png",
+                            "/src/assets/images/channels_5.png"
+                        ]
+                    },
+                    {
+                        key: "sport",
+                        title: "Спортивные",
+                        items: [
+                            "/src/assets/images/channels_6.png",
+                            "/src/assets/images/channels_6.png",
+                            "/src/assets/images/channels_6.png"
+                        ]
+                    },
+                    {
+                        key: "kids",
+                        title: "Детские",
+                        items: [
+                            "/src/assets/images/channels_7.png",
+                            "/src/assets/images/channels_7.png",
+                            "/src/assets/images/channels_7.png"
+                        ]
+                    },
+                    {
+                        key: "musical",
+                        title: "Музыкальные",
+                        items: [
+                            "/src/assets/images/channels_8.png",
+                            "/src/assets/images/channels_8.png",
+                            "/src/assets/images/channels_8.png"
+                        ]
+                    },
                 ]
 
             },

@@ -1,0 +1,32 @@
+<section class="tariffs__additional">
+    <div class="tariffs__additional-wrapper container">
+        {{#if title}}
+        <h2 class="tariffs__additional-title">
+            {{title}}
+        </h2>
+        {{/if}}
+
+        <div class="tariffs__additional-content">
+            <div class="tariffs__additional-content-heading">
+                <div class="tariffs__additional-content-heading-title">
+                    <h3>
+                        Тарифы
+                    </h3>
+                    <span>На услуги и подключение к сети</span>
+                </div>
+                <a href="{{link}}" class="tariffs__additional-link desktop">
+                    Все тарифы
+                </a>
+            </div>
+            <div class="tariffs__additional-content-list">
+                {{#each tariffsItem}}
+                {{>  tariffs-item-main img=this.img speed=this.speed title=this.title price=this.price note=this.note}}
+                {{/each}}
+            </div>
+            <a href="{{link}}" class="tariffs__additional-link mobile">
+                Все тарифы
+            </a>
+        </div>
+
+    </div>
+</section>

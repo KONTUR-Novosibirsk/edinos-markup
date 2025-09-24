@@ -14,13 +14,25 @@
     {{> header}}
 
     <main class="main">
-        {{>bannerSlider}}
+        {{>banner-slider}}
+        {{>site-search}}
         {{>activities}}
         {{>billing class="billing__wrapper"}}
-        {{>tariffs itemPartial="tariffItem"}}
-        {{>searchInternet}}
-        {{>promotionSlider}}
-        {{>modalConnect}}
+        {{>tariffs-main}}
+        {{>search-cities}}
+
+        {{>showcase-slider
+        prev="promotion__prev"
+        next="promotion__next"
+        title="Акции и спецпредложения"
+        slider-name="promotion__slider"
+        slide-name="promotion__slider-slide"
+        itemPartial="promotion-item"
+        itemPartial2="promotion-additional"
+        }}
+
+
+        <!--        {{>modalConnect}}-->
     </main>
     {{>footer}}
 

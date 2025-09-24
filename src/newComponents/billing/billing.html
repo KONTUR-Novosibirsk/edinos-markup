@@ -1,0 +1,15 @@
+<section class="billing">
+    <div class="billing__wrapper container">
+
+        {{#if title}}
+        <h2 class="billing__title">
+            {{title}}
+        </h2>
+        {{/if}}
+
+        <div class="billing__inner">
+            {{>wallet walletImages=walletImages}}
+            {{>account }}
+        </div>
+    </div>
+</section>
