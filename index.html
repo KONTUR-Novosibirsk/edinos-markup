@@ -14,7 +14,14 @@
     {{> header}}
 
     <main class="main">
-        {{>banner-slider}}
+        {{>base-slider main-class="banner"
+        class="base__slider-banner"
+        itemPartial="slide-for-banner"
+        slides=bannerSlides
+        prev="banner__prev"
+        next="banner__next"
+        pagination="banner__pagination"
+        }}
         {{>site-search}}
         {{>activities}}
         {{>billing class="billing__wrapper"}}
@@ -27,8 +34,7 @@
         title="Акции и спецпредложения"
         slider-name="promotion__slider"
         slide-name="promotion__slider-slide"
-        itemPartial="promotion-item"
-        itemPartial2="promotion-additional"
+        slides=showcasePromotions
         }}
 
 

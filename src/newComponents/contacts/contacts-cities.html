@@ -1,0 +1,15 @@
+<div class="contacts__cities">
+    {{#each contacts}}
+    {{>contacts-item
+    city=this.city
+    address=this.address
+    phone1=this.phone1
+    phone2=this.phone2
+    note=this.note
+    schedule=this.schedule
+    weekend=this.weekend
+    }}
+    {{/each}}
+
+
+</div>

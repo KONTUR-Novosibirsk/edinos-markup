@@ -20,7 +20,7 @@
             </div>
             <div class="tariffs__additional-content-list">
                 {{#each tariffsItem}}
-                {{>  tariffs-item-main img=this.img speed=this.speed title=this.title price=this.price note=this.note}}
+                {{> (lookup ../. "itemPartial") this}}
                 {{/each}}
             </div>
             <a href="{{link}}" class="tariffs__additional-link mobile">

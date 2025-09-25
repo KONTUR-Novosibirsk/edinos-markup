@@ -1,0 +1,24 @@
+<section class="base__slider {{main-class}}">
+    <div class="base__slider-wrapper container">
+        {{#if title}}
+        <h2 class="base__slider-title">
+            {{title}}
+        </h2>
+        {{/if}}
+
+        <div class="base__slider-content">
+            <div class="{{class}} swiper">
+                <div class="swiper-wrapper">
+                    {{#each slides}}
+                    <div class="swiper-slide">
+                        {{> (lookup ../. "itemPartial") this}}
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            {{>base-controls prev=prev next=next}}
+            {{>base-pagination pagination=pagination}}
+        </div>
+    </div>
+
+</section>

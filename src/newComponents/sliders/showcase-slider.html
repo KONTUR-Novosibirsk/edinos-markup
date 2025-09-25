@@ -15,69 +15,11 @@
         <div class="showcase__content">
             <div class="{{slider-name}} swiper">
                 <div class="swiper-wrapper">
-                    <div class="{{slide-name}} swiper-slide">
-                        {{> (lookup . "itemPartial")
-                        first="Скидки"
-                        second="новым"
-                        third="абонентам"
-                        img="src/assets/images/promotions_1.png"
-                        link="#"
-                        }}
-
+                    {{#each slides}}
+                    <div class="{{../slide-name}} swiper-slide">
+                        {{> (lookup . "partial") this}}
                     </div>
-
-                    <div class="{{slide-name}} swiper-slide">
-                        {{> (lookup . "itemPartial2")
-                        first="Акция"
-                        second="Подключение бесплатно"
-                        third="Всё включено"
-                        img="src/assets/images/promotions_2.png"
-                        link="#"
-                        }}
-
-                    </div>
-                    <div class="{{slide-name}} swiper-slide">
-                        {{> (lookup . "itemPartial")
-                        first="Скидки"
-                        second="новым"
-                        third="абонентам"
-                        img="src/assets/images/promotions_1.png"
-                        link="#"
-                        }}
-
-                    </div>
-
-                    <div class="{{slide-name}} swiper-slide">
-                        {{> (lookup . "itemPartial2")
-                        first="Акция"
-                        second="Подключение бесплатно"
-                        third="Всё включено"
-                        img="src/assets/images/promotions_2.png"
-                        link="#"
-                        }}
-
-                    </div>
-                    <div class="{{slide-name}} swiper-slide">
-                        {{> (lookup . "itemPartial")
-                        first="Скидки"
-                        second="новым"
-                        third="абонентам"
-                        img="src/assets/images/promotions_1.png"
-                        link="#"
-                        }}
-
-                    </div>
-
-                    <div class="{{slide-name}} swiper-slide">
-                        {{> (lookup . "itemPartial2")
-                        first="Акция"
-                        second="Подключение бесплатно"
-                        third="Всё включено"
-                        img="src/assets/images/promotions_2.png"
-                        link="#"
-                        }}
-
-                    </div>
+                    {{/each}}
                 </div>
             </div>
         </div>

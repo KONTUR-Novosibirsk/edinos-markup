@@ -16,6 +16,7 @@ export default defineConfig({
                 VideoSurveillance: resolve(__dirname, 'src/pages/VideoSurveillance.html'),
                 tariffsPage: resolve(__dirname, 'src/pages/tariffsPage.html'),
                 discountPage: resolve(__dirname, 'src/pages/discountPage.html'),
+                contacts: resolve(__dirname, 'src/pages/contacts.html'),
             }
         }
     },
@@ -34,16 +35,22 @@ export default defineConfig({
                 resolve(__dirname, 'src/newComponents/billing'),
                 resolve(__dirname, 'src/newComponents/tariffs'),
                 resolve(__dirname, 'src/newComponents/searches'),
-                resolve(__dirname, 'src/newComponents/internet'),
+                resolve(__dirname, 'src/newComponents/equipment'),
                 resolve(__dirname, 'src/newComponents/channels'),
+                resolve(__dirname, 'src/newComponents/formsAndModal'),
+                resolve(__dirname, 'src/newComponents/support'),
+                resolve(__dirname, 'src/newComponents/contacts'),
 
 
-                resolve(__dirname, 'src/partials'),
+
+
+
+                // resolve(__dirname, 'src/partials'),
                 resolve(__dirname, 'src/components'),
                 resolve(__dirname, 'src/components/header'),
                 resolve(__dirname, 'src/components/support'),
-                resolve(__dirname, 'src/components/searches'),
-                resolve(__dirname, 'src/components/sliders'),
+                // resolve(__dirname, 'src/components/searches'),
+                // resolve(__dirname, 'src/components/sliders'),
                 resolve(__dirname, 'src/components/formsAndModal'),
                 // resolve(__dirname, 'src/components/billing'),
                 resolve(__dirname, 'src/components/internet'),
@@ -259,6 +266,205 @@ export default defineConfig({
 
 
                 ],
+                tariffsVideo: [
+                    {
+                        title: "Рекомендуем",
+                        days: "3 дня",
+                        save: "хранение",
+                        price: "230 ₽",
+                        features: [
+                            "онлайн просмотр",
+                            "просмотр записей",
+                            "уведомления",
+                            "хранение 36 часов"
+                        ]
+                    },
+                    {
+                        title: "Стандарт",
+                        days: "7 дней",
+                        save: "хранение",
+                        price: "230 ₽",
+                        features: [
+                            "онлайн просмотр",
+                            "просмотр записей",
+                            "уведомления",
+                            "хранение 7 дней"
+                        ]
+                    },
+                    {
+                        title: "Премиум",
+                        days: "30 дней",
+                        save: "хранение",
+                        price: "230 ₽",
+                        features: [
+                            "онлайн просмотр",
+                            "просмотр записей",
+                            "уведомления",
+                            "хранение 7 дней"
+                        ]
+                    }
+                ],
+                equipmentVideo: [
+                    {
+                        img: '/src/assets/images/video_item.png',
+                        title: 'Polyvision 2Мп PVC-IP2S-NF2.8',
+                        caption: 'Wi-Fi камера с поворотом 360°. Можно не только смотреть, но и\n' +
+                            'слушать.',
+                        price: '3 750 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/video_item.png',
+                        title: 'Polyvision PVC-IP2S-D1F2.8',
+                        caption: 'Wi-Fi камера с поворотом 360°. Можно не только смотреть, но и\n' +
+                            'слушать.',
+                        price: '3 750 ₽'
+                    }
+                ],
+                equipmentInternet: [
+                    {
+                        img: '/src/assets/images/equipment__item-img.png',
+                        title: 'Терминал C-DATA xPON ONT FD511G-X-APC',
+                        caption: 'Технология MU-MIMO гарантирует быструю передачу файлов в хорошем качестве и возможность играть в онлайн-игры без задержек.',
+                        price: '1 990 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/equipment__item-img.png',
+                        title: 'Терминал C-DATA xPON ONT FD511G-X-APC',
+                        caption: 'Технология MU-MIMO гарантирует быструю передачу файлов в хорошем качестве и возможность играть в онлайн-игры без задержек.',
+                        price: '1 990 ₽'
+                    },
+                ],
+                bannerSlides: [
+                    {
+                        note: "По оптическому кабелю все современные сервисы",
+                        title: "Проводной интернет",
+                        caption: "Проводной интернет обеспечивает надежность соединения...",
+                        img: "/src/assets/images/banner_img.png"
+                    },
+                    {
+                        note: "Смотри в HD",
+                        title: "Цифровое ТВ",
+                        caption: "Подключи телевидение с сотнями каналов...",
+                        img: "/src/assets/images/banner_img.png"
+                    }
+                ],
+                vacancySlides: [
+                    {
+                        title: "Инженер по тестированию",
+                        tasks: [
+                            "заниматься тестированием новых продуктов и услуг перед запуском (проверка корректности тарификации, доступность подключения/отключения тарифов и услуг, работоспособность услуг)",
+                            "взаимодействовать с сотрудниками других структурных подразделений, принимать участие в переговорах, связанных с тестированием продуктов и исправлением выявленных в процессе тестирования проблем."
+                        ],
+                        price: "75 000 ₽"
+                    },
+                    {
+                        title: "Frontend-разработчик",
+                        tasks: [
+                            "разрабатывать интерфейсы для личного кабинета и внутренних сервисов",
+                            "участвовать в проектировании архитектуры клиентских приложений",
+                            "писать тесты и поддерживать документацию"
+                        ],
+                        price: "120 000 ₽"
+                    }
+                ],
+                showcasePromotions: [
+                    {
+                        partial: "promotion-item",
+                        first: "Скидки",
+                        second: "новым",
+                        third: "абонентам",
+                        img: "/src/assets/images/promotions_1.png",
+                        link: "#"
+                    },
+                    {
+                        partial: "promotion-additional",
+                        first: "Акция",
+                        second: "Подключение бесплатно",
+                        third: "Всё включено",
+                        img: "/src/assets/images/promotions_2.png",
+                        link: "#"
+                    },
+                    {
+                        partial: "promotion-item",
+                        first: "Скидки",
+                        second: "новым",
+                        third: "абонентам",
+                        img: "/src/assets/images/promotions_1.png",
+                        link: "#"
+                    }
+                ],
+                showcaseNews: [
+                    {
+                        partial: "news-item",
+                        title: "Специальное предложение для услуг связи при покупке оборудования",
+                        img: "/src/assets/images/news_img.png",
+                        link: "#",
+                        date: "01.01.2025"
+                    },
+                    {
+                        partial: "news-item",
+                        title: "Новые тарифы для частных клиентов",
+                        img: "/src/assets/images/news_img.png",
+                        link: "#",
+                        date: "10.01.2025"
+                    },
+                    {
+                        partial: "news-item",
+                        title: "Специальное предложение для услуг связи при покупке оборудования",
+                        img: "/src/assets/images/news_img.png",
+                        link: "#",
+                        date: "01.01.2025"
+                    },
+                    {
+                        partial: "news-item",
+                        title: "Новые тарифы для частных клиентов",
+                        img: "/src/assets/images/news_img.png",
+                        link: "#",
+                        date: "10.01.2025"
+                    },
+                    {
+                        partial: "news-item",
+                        title: "Специальное предложение для услуг связи при покупке оборудования",
+                        img: "/src/assets/images/news_img.png",
+                        link: "#",
+                        date: "01.01.2025"
+                    },
+                    {
+                        partial: "news-item",
+                        title: "Новые тарифы для частных клиентов",
+                        img: "/src/assets/images/news_img.png",
+                        link: "#",
+                        date: "10.01.2025"
+                    },
+
+                ],
+                contactsList: [
+                    {
+                        city: "Барнаул",
+                        address: "г.Барнаул, пр-т Социалистический 109, оф. 411.",
+                        phone1: "8 (923) 002-86-74",
+                        phone2: "8 (3852) 57-30-06",
+                        note: "Прием заявок от абонентов по телефону с 8:00 до 23:00 (без выходных)",
+                        schedule: "с 9:00 до 17:30",
+                        weekend: "выходной – суббота, воскресенье",
+                        coords: [53.348047571104104, 83.76796299999994]
+                    },
+                    {
+                        city: "Тюмень",
+                        address: "г.Ишим, ул. Рокоссовского 53, оф. 301.",
+                        phone1: "8 (800) 123-45-67",
+                        schedule: "с 9:00 до 18:00",
+                        coords: [56.114445068644294, 69.4904544999999]
+                    },
+                    {
+                        city: "Улан-Удэ",
+                        address: "г.Улан-Удэ, ул. Красноармейская 28, оф. 402",
+                        phone1: "8 (3012) 98-76-54",
+                        coords: [51.83941107218678, 107.60309749999998]
+                    }
+                ],
+
+
                 channels: [
                     {
                         key: "all",
@@ -350,6 +556,9 @@ export default defineConfig({
                 ]
 
             },
+            helpers: {
+                json: (context) => JSON.stringify(context) // 👈 наш хелпер
+            }
         }),
 
     ],

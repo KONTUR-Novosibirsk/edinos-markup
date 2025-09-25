@@ -1,0 +1,27 @@
+<div class="vacancy__item">
+    <div class="vacancy__item-content">
+
+        <h2 class="vacancy__item-content-title">
+            {{title}}
+        </h2>
+
+        <div class="vacancy__item-content-list">
+            <h3 class="vacancy__item-content-list-title">
+                {{title}}
+            </h3>
+            <ul>
+                {{#each tasks}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <span class="vacancy__item-content-price">
+         {{price}}
+        </span>
+
+        <button class="vacancy__item-content-btn">
+            Откликнуться
+        </button>
+    </div>
+</div>

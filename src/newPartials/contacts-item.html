@@ -1,0 +1,33 @@
+<div class="contacts__item">
+    <div class="contacts__item-content">
+        {{#if city}}
+        <div class="contacts__item-content-title">
+            <h3>
+                {{city}}
+            </h3>
+            {{#if address}}<span>{{address}}</span>{{/if}}
+        </div>
+        {{/if}}
+        {{#if phone1}}
+        <div class="contacts__item-content-numbers">
+            <a href="tel:{{phone1}}">{{phone1}}</a>
+            {{#if phone2}}
+            <a href="tel:{{phone2}}">{{phone2}}</a>
+            {{/if}}
+        </div>
+        {{/if}}
+        {{#if note}}
+        <span class="contacts__item-content-note">
+        {{note}}
+      </span>
+        {{/if}}
+        {{#if schedule}}
+        <div class="contacts__item-content-schedule">
+            <span>{{schedule}}</span>
+            {{#if weekend}}
+            <span>{{weekend}}</span>
+            {{/if}}
+        </div>
+        {{/if}}
+    </div>
+</div>

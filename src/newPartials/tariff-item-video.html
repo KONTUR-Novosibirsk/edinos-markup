@@ -1,0 +1,29 @@
+<article class="tariffs__video">
+    <h3 class="tariffs__video-title">
+        {{title}}
+    </h3>
+    <div class="tariffs__video-content">
+        <div class="tariffs__video-content-days">
+            <span class="tariffs__video-content-days-day">{{days}}</span>
+            <span class="tariffs__video-content-days-save">{{save}}</span>
+        </div>
+        <h4 class="tariffs__video-content-price">
+            <span>{{price}}</span>/мес
+        </h4>
+        <ul class="tariffs__video-content-list">
+            {{#each features}}
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+                    <path d="M7.51412 1.75002C8.04306 1.16926 8.95679 1.16926 9.48572 1.75002L10.1659 2.49684C10.4331 2.79035 10.8173 2.94948 11.2139 2.93095L12.2229 2.8838C13.0075 2.84712 13.6537 3.49328 13.6171 4.27793L13.5699 5.28693C13.5513 5.68349 13.7105 6.06767 14.004 6.33497L14.7508 7.0151C15.3316 7.54403 15.3316 8.45777 14.7508 8.9867L14.004 9.66683C13.7105 9.9341 13.5513 10.3183 13.5699 10.7149L13.6171 11.7239C13.6537 12.5085 13.0075 13.1547 12.2229 13.118L11.2139 13.0708C10.8173 13.0523 10.4331 13.2114 10.1659 13.505L9.48572 14.2518C8.95679 14.8326 8.04306 14.8326 7.51412 14.2518L6.83399 13.505C6.5667 13.2114 6.18251 13.0523 5.78595 13.0708L4.77694 13.118C3.9923 13.1547 3.34615 12.5085 3.38282 11.7239L3.42997 10.7149C3.44851 10.3183 3.28937 9.9341 2.99586 9.66683L2.24904 8.9867C1.66829 8.45777 1.66829 7.54403 2.24904 7.0151L2.99586 6.33497C3.28937 6.06767 3.44851 5.68349 3.42997 5.28693L3.38282 4.27792C3.34615 3.49328 3.9923 2.84712 4.77695 2.8838L5.78595 2.93095C6.18251 2.94948 6.5667 2.79035 6.83399 2.49684L7.51412 1.75002Z" fill="#FF6600" stroke="#FF6600" stroke-width="1.06667"/>
+                    <path d="M6.5 7.99935L7.83333 9.33268L10.5 6.66602" stroke="white" stroke-width="1.06667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {{this}}
+            </li>
+            {{/each}}
+        </ul>
+        <button class="tariffs__video-content-connect">
+            Подключиться
+        </button>
+    </div>
+</article>
+

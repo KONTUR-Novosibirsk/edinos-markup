@@ -12,12 +12,19 @@
     {{> header}}
 
     <main class="main">
-        {{>bannerSlider}}
-        {{>tariffs itemPartial="tariffItemVideo"  title="Видеонаблюдение"}}
-        {{>equipment}}
-        {{>promoBanner title="Сократите риски и увеличьте безопасность!" caption="Установите видеонаблюдение и защитите свое имущество."}}
-        {{>modalConnect}}
-     </main>
+        {{>base-slider main-class="banner"
+        class="base__slider-banner"
+        itemPartial="slide-for-banner"
+        slides=bannerSlides
+        prev="banner__prev"
+        next="banner__next"
+        pagination="banner__pagination"
+        }}
+        {{>site-search}}
+        {{>tariffs-additional tariffsItem=tariffsVideo itemPartial="tariff-item-video"}}
+        {{>equipment equipmentItems=equipmentVideo }}
+        {{>promo-banner title="Сократите риски и увеличьте безопасность!" caption="Установите видеонаблюдение и защитите свое имущество."}}
+    </main>
     {{>footer}}
 
 </div>

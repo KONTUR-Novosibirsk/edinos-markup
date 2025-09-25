@@ -8,14 +8,13 @@ import './styles/main.scss';
 import './components/header/header.js';
 import './newComponents/sliders/sliders.js';
 import './newComponents/billing/billing.js';
-
+import './newComponents/support/support.js';
+import './newComponents/contacts/contacts.js';
 
 
 //Старое подлключение
 
-import './components/sliders/sliders.js';
 import './components/formsAndModal/formsAndModal.js';
-import './components/support/support.js';
 import './components/tariffs/tariffs.js';
 
 

@@ -5,29 +5,26 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Телевидение</title>
+    <title>Контакты</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
 </head>
+
+
 <body>
 <div class="wrapper">
     {{> header}}
 
     <main class="main">
-        {{>base-slider main-class="banner"
-        class="base__slider-banner"
-        itemPartial="slide-for-banner"
-        slides=bannerSlides
-        prev="banner__prev"
-        next="banner__next"
-        pagination="banner__pagination"
-        }}
-        {{>site-search}}
-        {{>tariffs-additional tariffsItem=tariffsTv itemPartial="tariffs-item-main"}}
-        {{>channels}}
+        {{>contacts-main contacts=contactsList}}
     </main>
     {{>footer}}
 
 </div>
 
 <script type="module" src="/src/main.js"></script>
+
 </body>
 </html>
+
+

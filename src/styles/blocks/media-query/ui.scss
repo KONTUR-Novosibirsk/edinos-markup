@@ -1,4 +1,3 @@
-//Новые стили - изменить название
 
 @media(max-width: 992px) {
   .banner__item {
@@ -32,6 +31,37 @@
   .showcase__controls {
     display: none;
   }
+
+  .base__controls {
+    display: none;
+  }
+
+  .faq__list {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+
+  }
+  .faq__item {
+    max-width: 305px;
+    width: 100%;
+  }
+
+  .faq__search-form {
+    & button {
+      display: none;
+    }
+  }
+  .support__form {
+    &-wrapper {
+      display: contents;
+    }
+
+    &-content {
+      padding: 32px 16px;
+    }
+  }
+
+
 }
 
 @media(max-width: 767px) {
@@ -42,8 +72,15 @@
       }
     }
   }
-}
 
+  .faq__list {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+  .faq__item {
+    max-width: 100%;
+  }
+}
 
 @media(max-width: 576px) {
   .wallet {
@@ -126,39 +163,6 @@
     }
   }
 
-}
-
-
-//Старые стили
-
-//Адаптив для поиска на главной странице и страницы интернета
-
-
-//Адаптив для промо
-
-@media(max-width: 767px) {
-  .promo {
-    &__right {
-      display: none;
-    }
-  }
-}
-
-//Адаптив для страницы поисковой формы на странице Техническая поддержка
-
-@media(max-width: 992px) {
-  .support__form {
-    &-wrapper {
-      display: contents;
-    }
-
-    &-content {
-      padding: 32px 16px;
-    }
-  }
-}
-
-@media(max-width: 576px) {
   .support__form {
     &-fields {
       flex-direction: column;
@@ -176,35 +180,6 @@
       }
     }
   }
+
 }
 
-
-//Адаптив для блока с вопросами
-
-@media(max-width: 992px) {
-  .faq__list {
-    grid-template-columns: repeat(2, 1fr);
-    place-items: center;
-
-  }
-  .faq__item {
-    max-width: 305px;
-    width: 100%;
-  }
-
-  .faq__search-form {
-    & button {
-      display: none;
-    }
-  }
-}
-
-@media(max-width: 767px) {
-  .faq__list {
-    grid-template-columns: repeat(1, 1fr);
-
-  }
-  .faq__item {
-    max-width: 100%;
-  }
-}

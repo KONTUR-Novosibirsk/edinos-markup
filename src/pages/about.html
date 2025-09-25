@@ -12,12 +12,72 @@
     {{> header}}
 
     <main class="main">
-        {{>bannerSlider}}
-        {{>aboutDescription}}
-        {{>vacancySlider}}
-        {{>promotionSlider}}
-        {{>newsSlider}}
-        {{>modalVacancy}}
+        {{>base-slider main-class="banner"
+        class="base__slider-banner"
+        itemPartial="slide-for-banner"
+        slides=bannerSlides
+        prev="banner__prev"
+        next="banner__next"
+        pagination="banner__pagination"
+        }}
+        {{>site-search}}
+        <section class="about__description">
+            <div class="about__description-wrapper container">
+                <div class="about__description-top">
+                    <h2 class="about__description-top-title">
+                        О компании
+                    </h2>
+                    <p class="about__description-top-caption">
+                        С 2010 года мы специализируемся на подключении высокоскоростного интернета, цифрового
+                        телевидения и видеонаблюдения в частном секторе. За это время мы обеспечили стабильной связью
+                        более 65000 домов в Алтайском крае, Тюменской области и Республике Бурятия.
+                    </p>
+                </div>
+                <div class="about__description-bottom">
+                    <h3 class="about__description-bottom-title">
+                        Почему нам доверяют?
+                    </h3>
+                    <ul class="about__description-bottom-list">
+                        <li>
+                            Более 14 лет на рынке – мы знаем все о подключении частных домов и коттеджей.
+                        </li>
+                        <li>
+                            Собственная инфраструктура – оптоволоконные сети (GPON) вместо устаревших технологий.
+                        </li>
+                        <li>
+                            Решаем сложные задачи – подключаем даже там, где другие отказывают.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        {{>base-slider
+        class="base__slider-vacancy"
+        itemPartial="slide-for-vacancy"
+        slides=vacancySlides
+        prev="vacancy__prev"
+        next="vacancy__next"
+        pagination="vacancy__pagination"
+        title="Вакансии"
+        }}
+
+        {{>showcase-slider
+        prev="promotion__prev"
+        next="promotion__next"
+        title="Акции и спецпредложения"
+        slider-name="promotion__slider"
+        slide-name="promotion__slider-slide"
+        slides=showcasePromotions
+        }}
+
+        {{>showcase-slider
+        prev="news__prev"
+        next="news__next"
+        title="Новости"
+        slider-name="news__slider"
+        slide-name="news__slider-slide"
+        slides=showcaseNews
+        }}
     </main>
     {{>footer}}
 

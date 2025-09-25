@@ -12,11 +12,18 @@
     {{> header}}
 
     <main class="main">
-        {{>banner-slider}}
+        {{>base-slider main-class="banner"
+        class="base__slider-banner"
+        itemPartial="slide-for-banner"
+        slides=bannerSlides
+        prev="banner__prev"
+        next="banner__next"
+        pagination="banner__pagination"
+        }}
         {{>site-search}}
         {{>search-cities}}
-        {{>tariffs-additional tariffsItem=tariffsInternet }}
-        {{>equipment}}
+        {{>tariffs-additional tariffsItem=tariffsInternet itemPartial="tariffs-item-main"}}
+        {{>equipment equipmentItems=equipmentInternet}}
         {{>promo-banner title="Подключим интернет за 48 часов" caption="Скидка 50% на тариф '300 Мбит + Телевидение' на
         первые 3 месяца"}}
     </main>

@@ -7,18 +7,11 @@
     }
   }
 
-}
-
-
-@media(max-width: 767px) {
-  //Стили для слайдера - Баннер
-  .banner {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-
-    &__wrapper {
-      display: contents;
+  .base__slider {
+    &-wrapper {
+      &.container {
+        padding: 0;
+      }
     }
   }
 
@@ -27,28 +20,4 @@
 
 
 
-//Адаптив для слайдера вакансий
 
-@media(max-width: 992px) {
-  .vacancy {
-    &__wrapper {
-      display: contents;
-    }
-  }
-}
-
-//Адаптив для слайдера Акций и спецпредложений
-
-//@media(max-width: 992px) {
-//  .promotions {
-//    &__slider {
-//      &-slide {
-//        &-content {
-//          &-img {
-//            display: none;
-//          }
-//        }
-//      }
-//    }
-//  }
-//}

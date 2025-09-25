@@ -2,20 +2,20 @@ import Swiper from 'swiper';
 import {Navigation, Pagination} from 'swiper/modules';
 
 
-//Слайдер для баннера
+//Слайдер базовый
 document.addEventListener('DOMContentLoaded', () => {
-    const sliderBanner = document.querySelector('.banner__slider');
+    const sliderBanner = document.querySelector('.base__slider-banner');
     if (!sliderBanner) return;
 
     new Swiper(sliderBanner, {
         modules: [Navigation, Pagination],
         slidesPerView: 1,
         navigation: {
-            nextEl: '.banner__slider-controls-next',
-            prevEl: '.banner__slider-controls-prev',
+            nextEl: '.banner__next',
+            prevEl: '.banner__prev',
         },
         pagination: {
-            el: '.banner__slider-pagination',
+            el: '.banner__pagination',
             clickable: true,
         },
     });
@@ -130,3 +130,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+//Слайдер для вакансий
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderVacancy = document.querySelector('.base__slider-vacancy');
+    if (!sliderVacancy) return;
+
+    new Swiper(sliderVacancy, {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1,
+        navigation: {
+            nextEl: '.vacancy__next',
+            prevEl: '.vacancy__prev',
+        },
+        pagination: {
+            el: '.vacancy__pagination',
+            clickable: true,
+        },
+    });
+});
+
+//Слайдер для новостей
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderNews = document.querySelector('.news__slider');
+    if (!sliderNews) return;
+
+    new Swiper(sliderNews, {
+        modules: [Navigation, Pagination],
+        slidesPerView: 4,
+        watchOverflow: true,
+        spaceBetween: 18,
+        navigation: {
+            nextEl: '.news__next',
+            prevEl: '.news__prev',
+        },
+        breakpoints: {
+            1400: {
+                slidesPerView: 4,
+                spaceBetween: 18,
+            },
+            1100: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 12,
+            },
+            0: {
+                slidesPerView: 1.2,
+                spaceBetween: 8,
+            },
+        }
+
+    });
+});
+
+
+
