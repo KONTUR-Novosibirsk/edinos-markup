@@ -5,6 +5,8 @@ import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
     build: {
+        base: '/edinos-markup/',
+        outDir: 'dist',
         rollupOptions: {
             input: {
                 main: resolve(__dirname, 'index.html'),
