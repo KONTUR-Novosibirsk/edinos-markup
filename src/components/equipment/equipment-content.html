@@ -1,0 +1,10 @@
+<div class="equipment__content">
+    {{#each equipmentItems}}
+    {{> equipment-item
+    img=this.img
+    title=this.title
+    caption=this.caption
+    price=this.price
+    }}
+    {{/each}}
+</div>

@@ -1,7 +1,5 @@
 @use '@/styles/common/variables';
 
-//Новы стили - Изменить название
-
 //Переключатель в Header (Для дома или бизнеса)
 .switch {
   position: relative;
@@ -464,7 +462,6 @@
   }
 }
 
-
 //Стили для слайда Баннера
 .banner__item {
   display: flex;
@@ -529,7 +526,7 @@
       justify-content: center;
       padding: clamp(0.438rem, 0.279rem + 0.71vw, 1.125rem) 29px;
       border-radius: 13px;
-      background: #F60;
+      background-color: #F60;
       color: #FFF;
       font-family: variables.$Raleway;
       font-size: 16px;
@@ -538,6 +535,10 @@
       line-height: 18px;
       letter-spacing: 0.32px;
       text-transform: uppercase;
+      transition: background-color variables.$time ease;
+      &:hover {
+        background-color: #FF822E;
+      }
     }
   }
 
@@ -639,7 +640,7 @@
       justify-content: center;
       padding: clamp(0.438rem, 0.279rem + 0.71vw, 1.125rem) 29px;
       border-radius: 13px;
-      background: #F60;
+      background-color: #F60;
       color: #FFF;
       font-family: variables.$Raleway;
       font-size: 16px;
@@ -648,10 +649,13 @@
       line-height: 18px;
       letter-spacing: 0.32px;
       text-transform: uppercase;
+      transition: background-color variables.$time ease;
+      &:hover {
+        background-color: #FF822E;
+      }
     }
   }
 }
-
 
 //Стили для поиска по всему сайту - находиться под баннером при мобильной версии
 
@@ -941,8 +945,11 @@
           letter-spacing: 0.32px;
           text-transform: uppercase;
           border-radius: 13px;
-          background: #F60;
-
+          background-color: #F60;
+          transition: background-color variables.$time ease;
+          &:hover {
+            background-color: #FF822E;
+          }
         }
 
       }
@@ -1032,6 +1039,13 @@
       line-height: 18px;
       letter-spacing: 0.32px;
       text-transform: uppercase;
+      transition: background-color variables.$time ease,border variables.$time ease, color variables.$time ease;
+
+      &:hover {
+        background-color: #FF822E;
+        color: #fff;
+        border: transparent;
+      }
     }
   }
 
@@ -1234,7 +1248,7 @@
 //Поиск по городам (находиться после тарифов)
 
 .search__cities {
-  margin-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
+  margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
 
   &-wrapper {
     display: flex;
@@ -1284,6 +1298,16 @@
       text-decoration-thickness: 5%;
       text-underline-offset: 21%;
       text-underline-position: from-font;
+      transition: color variables.$time ease;
+      &:hover {
+        color: #F60;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: 8%;
+        text-underline-offset: 25%;
+        text-underline-position: from-font;
+      }
     }
 
   }
@@ -1323,7 +1347,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 13px;
-      background: #F60;
+      background-color: #F60;
       color: #FFF;
       font-family: variables.$Raleway;
       font-size: 16px;
@@ -1332,6 +1356,10 @@
       line-height: 18px;
       letter-spacing: 0.32px;
       text-transform: uppercase;
+      transition: background-color variables.$time ease;
+      &:hover {
+        background-color: #FF822E;
+      }
     }
 
 
@@ -1536,6 +1564,16 @@
       text-decoration-thickness: 8%;
       text-underline-offset: 25%;
       text-underline-position: from-font;
+      transition: color variables.$time ease;
+      &:hover {
+        color: #F60;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: 8%;
+        text-underline-offset: 25%;
+        text-underline-position: from-font;
+      }
     }
 
     &-img {
@@ -1659,6 +1697,16 @@
       text-decoration-thickness: 8%;
       text-underline-offset: 25%;
       text-underline-position: from-font;
+      transition: color variables.$time ease;
+      &:hover {
+        color: #F60;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: 8%;
+        text-underline-offset: 25%;
+        text-underline-position: from-font;
+      }
     }
 
     &-img {
@@ -1682,14 +1730,23 @@
 //Карточка оборудования
 
 .equipment__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 23px;
   height: 100%;
 
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
   &-img {
     width: 100%;
-    height: clamp(12.5rem, 11.101rem + 6.22vw, 18.563rem);
+    height: clamp(10rem, 8.024rem + 8.78vw, 18.563rem);
 
     & img {
       width: 100%;
@@ -1703,11 +1760,12 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    height: 100%;
+
 
     &-text {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       gap: 17px;
       flex-grow: 1;
 
@@ -1743,6 +1801,8 @@
     }
 
     &-btn {
+      position: relative;
+      z-index: 1;
       width: 100%;
       height: 54px;
       display: flex;
@@ -1834,6 +1894,10 @@
         font-weight: 600;
         line-height: 24px;
         text-transform: uppercase;
+        transition: background-color variables.$time ease;
+        &:hover {
+          background-color: #FF822E;
+        }
       }
     }
 
@@ -1851,8 +1915,6 @@
     }
   }
 }
-
-///Старая версия
 
 //Карточка тарифов видео
 .tariffs__video {
@@ -2037,8 +2099,6 @@
 
 }
 
-//Поиск на главной как отдельный блок и на странице интернет
-
 //Карточка новости в слайдере новостей
 .news__item {
   position: relative;
@@ -2114,6 +2174,16 @@
         font-style: normal;
         font-weight: 600;
         text-decoration: underline;
+        transition: color variables.$time ease;
+        &:hover {
+          color: #F60;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-skip-ink: auto;
+          text-decoration-thickness: 8%;
+          text-underline-offset: 25%;
+          text-underline-position: from-font;
+        }
       }
     }
   }
@@ -2121,7 +2191,8 @@
 
 //Форма на странице - Техническая поддержка
 .support__form {
-  margin-top: clamp(0rem, -0.433rem + 1.92vw, 1.875rem);
+  margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
+
   &-content {
     padding: 70px;
     border-radius: clamp(0rem, -0.231rem + 1.03vw, 1rem);
@@ -2204,8 +2275,12 @@
       letter-spacing: 0.32px;
       text-transform: uppercase;
       border-radius: 13px;
-      background: #F60;
+      background-color: #F60;
       white-space: nowrap;
+      transition: background-color variables.$time ease;
+      &:hover {
+        background-color: #FF822E;
+      }
     }
 
     &-licenses {
@@ -2309,6 +2384,10 @@
       line-height: 18px;
       letter-spacing: 0.32px;
       text-transform: uppercase;
+      transition: background-color variables.$time ease;
+      &:hover {
+        background-color: #FF822E;
+      }
     }
   }
 
@@ -2371,6 +2450,7 @@
   background: #F2F3F7;
   padding: 40px;
   cursor: pointer;
+
   &-content {
     display: flex;
     flex-direction: column;
@@ -2421,6 +2501,7 @@
       font-weight: 400;
       line-height: normal;
     }
+
     & a {
       color: #292929;
       font-variant-numeric: lining-nums proportional-nums;
@@ -2434,12 +2515,200 @@
   }
 }
 
+// Стили для faqItem
+.faq__item {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  &-title {
+    color: #292929;
+    font-family: variables.$Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    & li {
+      color: #29316F;
+      font-family: variables.$Raleway;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+      cursor: pointer;
+      transition: color variables.$time ease;
+      &:hover {
+        color: #F60;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: 8%;
+        text-underline-offset: 25%;
+        text-underline-position: from-font;
+      }
+    }
+
+  }
+
+  &-more {
+    color: #F60;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: variables.$Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+  }
+}
+
+//Стили для всего списка faqItem
+.faq__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: clamp(1.5rem, 0.981rem + 2.31vw, 3.75rem);
+}
+
+//Карточка абонента
+
+.subscriber__item {
+  padding: 40px;
+  border-radius: 20px;
+  background: #F2F3F7;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    &-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      & h3 {
+        color: #292929;
+        font-family: variables.$Raleway;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.5px;
+      }
+
+      & p {
+        color: #3C3E4D;
+        font-family: variables.$Raleway;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+      }
+    }
+
+    &-socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background-color: #29316F;
+      }
+    }
+  }
+
+  &-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      & h3 {
+        color: #292929;
+        font-family: variables.$Raleway;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.5px;
+      }
+
+      & span {
+        color: #3C3E4D;
+        font-family: variables.$Raleway;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+
+      &-schedule {
+        display: flex;
+        flex-direction: column;
+
+        & span {
+          color: #3C3E4D;
+          font-family: variables.$Raleway;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 130%;
+        }
+      }
+
+      &-numbers {
+        display: flex;
+        flex-direction: column;
+
+        & a {
+          color: #F60;
+          font-variant-numeric: lining-nums proportional-nums;
+          font-family: variables.$Raleway;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 140%;
+        }
+      }
+    }
+  }
 
 
-
+}
 
 //Стили для модалки подключения
-
 .modal__connect {
   position: fixed;
   width: 100%;
@@ -3196,62 +3465,47 @@
   }
 }
 
+//Хлебные крошки
 
+.breadcrumbs {
+  margin-top: clamp(0rem, -0.433rem + 1.92vw, 1.875rem);
+  margin-bottom: clamp(0rem, -0.433rem + 1.92vw, 1.875rem);
 
-
-// Стили для faqItem
-.faq__item {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-
-  &-title {
-    color: #292929;
-    font-family: variables.$Raleway;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-  }
-
-  &-list {
+  &__list {
     display: flex;
-    flex-direction: column;
-    gap: 22px;
+    align-items: center;
+    gap: 7px;
 
-    & li {
-      color: #29316F;
+    & span {
+      color: #444;
       font-family: variables.$Raleway;
-      font-size: 16px;
+      font-size: 12px;
       font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-      text-decoration-line: underline;
-      text-decoration-style: solid;
-      text-decoration-skip-ink: none;
-      text-decoration-thickness: auto;
-      text-underline-offset: auto;
-      text-underline-position: from-font;
-      cursor: pointer;
+      font-weight: 400;
+      line-height: 18.9px;
     }
 
-  }
+    & li {
+      & a {
+        color: #444;
+        font-family: variables.$Raleway;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18.9px;
+      }
 
-  &-more {
-    color: #F60;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: variables.$Raleway;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    cursor: pointer;
+      &:first-child {
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-thickness: auto;
+        text-underline-offset: 10%; /* 1.2px */
+        text-underline-position: from-font;
+      }
+    }
   }
 }
 
-//Стили для всего списка faqItem
-.faq__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  row-gap: clamp(1.5rem, 0.981rem + 2.31vw, 3.75rem);
-}
+
+

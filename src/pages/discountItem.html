@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Главная страница</title>
+</head>
+
+
+<body>
+<div class="wrapper">
+    {{> header}}
+
+    <main class="main">
+        {{>base-slider main-class="banner"
+        class="base__slider-banner"
+        itemPartial="slide-for-banner"
+        slides=bannerSlides
+        prev="banner__prev"
+        next="banner__next"
+        pagination="banner__pagination"
+        }}
+        {{>site-search}}
+
+        <section class="discount__description">
+            <div class="discount__description-wrapper container">
+                <div class="discount__description-heading">
+                    <h2>
+                        Скидки новым абонентам
+                    </h2>
+                    <p>
+                        Скидка 50% на первые три месяца на абонентскую плату при подключении тарифа 300 Мбит + ТВ
+                    </p>
+                </div>
+                <div class="discount__description-body">
+                    <h3>
+                        Как это работает
+                    </h3>
+                    <p>
+                        Для участия нужно подключиться к билайну с новым номером и выбрать «Тариф UP», «Интернет LIVE»
+                        или план б.
+                        пополните основной баланс при покупке сим в офисе продаж, попросите сотрудника подключить акцию
+                        «Твоя выгода» — и в тот же день сумма пополнения превратится в бонусные рубли, которые
+                        зачислятся на бонусный баланс в увеличенном размере.
+                        бонусные рубли действуют 731 день с момента начисления или пока не закончатся. оплачивайте ими
+                        ваш тариф, в том числе опции, подключённые по нему, домашний интернет с билайн тв.
+
+                    </p>
+                </div>
+                <div class="discount__description-footer">
+                    <h3>
+                        Особенности
+                    </h3>
+
+                    <ul>
+                        <li>
+                            если перейдёте на тариф, где акция не проводится, бонусы сохранятся до конца срока их
+                            действия. пока вы на другом тарифе, потратить бонусы не получится.
+
+                        </li>
+                        <li>
+                            если вернётесь на тариф, участвующий в акции, то снова сможете пользоваться бонусами.
+                        </li>
+                        <li>
+                            если перейти на постоплатную систему расчётов или расторгнуть договор, участие в акции
+                            прекратится, восстановить его не получится. неиспользованные бонусные рубли сгорают после
+                            окончания срока их действия и не возвращаются в денежном эквиваленте.
+
+                        </li>
+                        <li>
+                            если изменить конфигурацию тарифа на вариант без абонентской платы, бонусные рубли не будут
+                            расходоваться на минуты, смс или интернет.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    {{>footer}}
+
+</div>
+
+<script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
+
+

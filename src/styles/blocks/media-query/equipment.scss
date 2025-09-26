@@ -1,0 +1,32 @@
+@media(max-width: 1200px) {
+  .equipment__inner {
+    &-title {
+      display: block;
+    }
+
+    &-info {
+      &-heading {
+        & h2 {
+          display: none;
+        }
+      }
+    }
+    &-container {
+      flex-direction: column;
+    }
+  }
+}
+
+@media(max-width: 992px) {
+  .equipment__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+}
+
+@media(max-width: 767px) {
+  .equipment__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

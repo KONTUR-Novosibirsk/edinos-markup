@@ -1,0 +1,30 @@
+<section class="subscriber__cards">
+    <div class="subscriber__cards-wrapper container">
+
+        <div class="subscriber__cards-list">
+            {{#each subscriberCards}}
+            {{>subscriber-item title=this.title caption=this.caption}}
+            {{/each}}
+            <div class="subscriber__item">
+                <div class="subscriber__item-inner">
+                    <div class="subscriber__item-inner-heading">
+                        <h3>Телефон</h3>
+                        <span>
+                            Позвоните по бесплатному номеру
+                        </span>
+                    </div>
+                    <div class="subscriber__item-inner-info">
+                        <div class="subscriber__item-inner-info-schedule">
+                            <span>Барнаул: с 9:00 до 17:30</span>
+                            <span>выходной – суббота, воскресенье</span>
+                        </div>
+                        <div class="subscriber__item-inner-info-numbers">
+                            <a href="">8 (923) 002-86-74</a>
+                            <a href=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

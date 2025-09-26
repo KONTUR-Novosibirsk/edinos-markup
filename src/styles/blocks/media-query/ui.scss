@@ -1,4 +1,3 @@
-
 @media(max-width: 992px) {
   .banner__item {
     &-content {
@@ -61,7 +60,9 @@
     }
   }
 
-
+  .breadcrumbs {
+    display: none;
+  }
 }
 
 @media(max-width: 767px) {

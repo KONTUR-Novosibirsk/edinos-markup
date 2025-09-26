@@ -1,17 +1,55 @@
-
-
 @media(max-width: 992px) {
   .contacts__page {
     &-content {
-      flex-direction: column;
+      display: contents;
+    }
+
+    &-wrapper {
+      gap: 24px;
     }
   }
+
   .contacts__cities {
     max-width: 100%;
+    order: 1;
+  }
+
+
+  .contacts__info {
+    order: 2;
   }
 
   .contacts__map {
+    order: 3;
     max-width: 100%;
     height: 365px;
+  }
+
+  .contacts__feedback {
+    &-wrapper {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &-heading {
+      max-width: 100%;
+    }
+
+    &-form {
+      max-width: 100%;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .contacts__feedback {
+    &-form {
+      &-licenses {
+        flex-direction: column-reverse;
+        & button {
+          max-width: 100%;
+        }
+      }
+    }
   }
 }

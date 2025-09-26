@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {Navigation, Pagination} from 'swiper/modules';
+import {Navigation, Pagination,Thumbs} from 'swiper/modules';
 
 
 //Слайдер базовый
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 });
-
 
 //Слайдер для тарифов
 document.addEventListener('DOMContentLoaded', () => {
@@ -186,5 +185,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//Слайдер внутри страници оборудования
 
+document.addEventListener('DOMContentLoaded', () => {
+    const mainSliderEl = document.querySelector('.equipment__item-slider-main .swiper');
+    const thumbsSliderEl = document.querySelector('.equipment__item-slider-thumbs .swiper');
 
+    if (!mainSliderEl) return;
+
+    let mainSwiper;
+    let thumbsSwiper;
+
+    const mediaQuery = window.matchMedia('(min-width: 992px)');
+
+    function initSliders(e) {
+        // если десктоп
+        if (e.matches) {
+            if (!thumbsSwiper && thumbsSliderEl) {
+                thumbsSwiper = new Swiper(thumbsSliderEl, {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    watchOverflow: true,
+                });
+            }
+
+            if (mainSwiper) mainSwiper.destroy(true, true);
+            mainSwiper = new Swiper(mainSliderEl, {
+                modules: [Navigation, Thumbs],
+                slidesPerView: 1,
+                spaceBetween: 10,
+
+                thumbs: thumbsSwiper ? { swiper: thumbsSwiper } : {},
+            });
+        } else {
+            if (thumbsSwiper) {
+                thumbsSwiper.destroy(true, true);
+                thumbsSwiper = null;
+            }
+
+            if (mainSwiper) mainSwiper.destroy(true, true);
+            mainSwiper = new Swiper(mainSliderEl, {
+                modules: [Navigation,Pagination],
+                slidesPerView: 1,
+                spaceBetween: 10,
+                pagination: {
+                    el: '.equipment__item-slider-pagination',
+                    clickable: true,
+                },
+
+            });
+        }
+    }
+
+    initSliders(mediaQuery);
+    mediaQuery.addEventListener('change', initSliders);
+});

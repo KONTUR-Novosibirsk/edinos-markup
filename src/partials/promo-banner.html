@@ -3,12 +3,16 @@
         <div class="promo__content">
             <div class="promo__content-info">
                 <div class="promo__content-info-text">
+                    {{#if title}}
                     <h2 class="promo__content-info-text-title">
                         {{title}}
                     </h2>
+                    {{/if}}
+                    {{#if caption}}
                     <p class="promo__content-info-text-caption">
                         {{caption}}
                     </p>
+                    {{/if}}
                 </div>
 
                 <button class="promo__content-info-btn">
@@ -22,5 +26,4 @@
         </div>
     </div>
 </section>
-
 

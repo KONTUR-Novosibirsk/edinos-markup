@@ -1,21 +1,17 @@
 import 'swiper/css';
+import 'swiper/css/thumbs';
 import './styles/main.scss';
 
 
-
-
-//Новое подключение
 import './components/header/header.js';
-import './newComponents/sliders/sliders.js';
-import './newComponents/billing/billing.js';
-import './newComponents/support/support.js';
-import './newComponents/contacts/contacts.js';
-
-
-//Старое подлключение
-
-import './components/formsAndModal/formsAndModal.js';
+import './components/sliders/sliders.js';
+import './components/billing/billing.js';
+import './components/support/support.js';
+import './components/contacts/contacts.js';
 import './components/tariffs/tariffs.js';
+import './components/equipment/equipment.js';
+import './components/formsAndModal/formsAndModal.js';
+
 
 
 

@@ -1,0 +1,41 @@
+<section class="tariffs__tabulations">
+    <div class="tariffs__tabulations-wrapper container">
+
+        <div class="tariffs__tabulations-tabs">
+            <button class="tariffs__tabulations-tabs-tab active" data-tab="internet">
+                <span class="tariffs__tabulations-tabs-tab-img">
+                    <img src="/src/assets/images/activities_internet.png" alt="">
+                </span>
+                Интернет
+            </button>
+            <button class="tariffs__tabulations-tabs-tab" data-tab="tv">
+                <span class="tariffs__tabulations-tabs-tab-img">
+                    <img src="/src/assets/images/activities_tv.png" alt="">
+                </span>
+                Телевидение
+            </button>
+            <button class="tariffs__tabulations-tabs-tab" data-tab="video">
+                <span class="tariffs__tabulations-tabs-tab-img">
+                    <img src="/src/assets/images/activities_video.png" alt="">
+                </span>
+                Видеоконтроль
+            </button>
+        </div>
+
+        <div class="tariffs__tabulations-contents">
+            <div class="tariffs__tabulations-contents-content active" data-tab="internet">
+                {{>tariffs-additional tariffsItem=tariffsInternet itemPartial="tariffs-item-main"}}
+
+            </div>
+            <div class="tariffs__tabulations-contents-content" data-tab="tv">
+                {{>tariffs-additional tariffsItem=tariffsVideo itemPartial="tariff-item-video"}}
+            </div>
+            <div class="tariffs__tabulations-contents-content" data-tab="video">
+                {{>tariffs-additional tariffsItem=tariffsInternet itemPartial="tariffs-item-main"}}
+
+            </div>
+        </div>
+
+
+    </div>
+</section>

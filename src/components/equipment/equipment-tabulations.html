@@ -1,0 +1,37 @@
+<section class="equipment__tabulations">
+    <div class="equipment__tabulations-wrapper container">
+        <div class="equipment__tabulations-title">
+            Оборудование
+        </div>
+
+        <div class="equipment__tabulations-inner">
+            <div class="equipment__tabulations-tabs">
+                <button class="equipment__tabulations-tabs-tab active" data-tab="all">
+                    Все
+                </button>
+                <button class="equipment__tabulations-tabs-tab" data-tab="internet">
+                    Для интернета
+                </button>
+                <button class="equipment__tabulations-tabs-tab" data-tab="tv">
+                    Для видеонаблюдения
+                </button>
+            </div>
+
+
+            <div class="equipment__tabulations-contents">
+                <div class="equipment__tabulations-contents-content active" data-tab="all">
+                    {{>equipment-content equipmentItems=equipmentAll}}
+                </div>
+                <div class="equipment__tabulations-contents-content" data-tab="internet">
+                    {{>equipment-content equipmentItems=equipmentInternet}}
+                </div>
+                <div class="equipment__tabulations-contents-content" data-tab="tv">
+                    {{>equipment-content equipmentItems=equipmentVideo}}
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>

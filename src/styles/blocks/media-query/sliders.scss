@@ -15,6 +15,16 @@
     }
   }
 
+  .equipment__item-slider {
+    &-pagination {
+      display: flex;
+    }
+  }
+
+  .equipment__item-slider-thumbs {
+    display: none;
+  }
+
 }
 
 

@@ -1,8 +1,7 @@
 @use '@/styles/common/variables';
 
-//Новые стили - поменять название
 .internet__equipment {
-  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
+  margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
 
   &-heading {
     display: flex;
@@ -36,6 +35,13 @@
       padding: 8px 36px;
       border-radius: 13px;
       border: 1px solid #F60;
+      transition: background-color variables.$time ease, color variables.$time ease, border variables.$time ease;
+
+      &:hover {
+        background-color: #FF822E;
+        color: #fff;
+        border: transparent;
+      }
     }
   }
 

@@ -14,58 +14,52 @@ export default defineConfig({
                 internet: resolve(__dirname, 'src/pages/internet.html'),
                 tv: resolve(__dirname, 'src/pages/tv.html'),
                 VideoSurveillance: resolve(__dirname, 'src/pages/VideoSurveillance.html'),
-                tariffsPage: resolve(__dirname, 'src/pages/tariffsPage.html'),
-                discountPage: resolve(__dirname, 'src/pages/discountPage.html'),
+                tariffs: resolve(__dirname, 'src/pages/tariffs.html'),
                 contacts: resolve(__dirname, 'src/pages/contacts.html'),
+                discountItem: resolve(__dirname, 'src/pages/discountItem.html'),
+                equipmentPage: resolve(__dirname, 'src/pages/equipmentPage.html'),
+                equipmentItemPage: resolve(__dirname, 'src/pages/equipmentItemPage.html'),
+            },
+            output: {
+                entryFileNames: '[name].js',
+                chunkFileNames: '[name].js',
+                assetFileNames: '[name].[ext]'
             }
-        }
+        },
     },
 
 
     plugins: [
         handlebars({
             partialDirectory: [
-                //Новое подключение
-                // Слайдеры - Изменить название папок
-                resolve(__dirname, 'src/newPartials'),
-                resolve(__dirname, 'src/newPartials/sliders'),
-                resolve(__dirname, 'src/newPartials/billing'),
-                resolve(__dirname, 'src/newComponents/sliders'),
-                resolve(__dirname, 'src/newComponents/activities'),
-                resolve(__dirname, 'src/newComponents/billing'),
-                resolve(__dirname, 'src/newComponents/tariffs'),
-                resolve(__dirname, 'src/newComponents/searches'),
-                resolve(__dirname, 'src/newComponents/equipment'),
-                resolve(__dirname, 'src/newComponents/channels'),
-                resolve(__dirname, 'src/newComponents/formsAndModal'),
-                resolve(__dirname, 'src/newComponents/support'),
-                resolve(__dirname, 'src/newComponents/contacts'),
-
-
-
-
-
-                // resolve(__dirname, 'src/partials'),
-                resolve(__dirname, 'src/components'),
-                resolve(__dirname, 'src/components/header'),
-                resolve(__dirname, 'src/components/support'),
-                // resolve(__dirname, 'src/components/searches'),
-                // resolve(__dirname, 'src/components/sliders'),
-                resolve(__dirname, 'src/components/formsAndModal'),
-                // resolve(__dirname, 'src/components/billing'),
-                resolve(__dirname, 'src/components/internet'),
+                resolve(__dirname, 'src/partials'),
+                resolve(__dirname, 'src/partials/sliders'),
+                resolve(__dirname, 'src/partials/billing'),
+                resolve(__dirname, 'src/components/sliders'),
+                resolve(__dirname, 'src/components/activities'),
+                resolve(__dirname, 'src/components/billing'),
                 resolve(__dirname, 'src/components/tariffs'),
-                resolve(__dirname, 'src/components/about'),
+                resolve(__dirname, 'src/components/searches'),
+                resolve(__dirname, 'src/components/equipment'),
+                resolve(__dirname, 'src/components/channels'),
+                resolve(__dirname, 'src/components/formsAndModal'),
+                resolve(__dirname, 'src/components/support'),
+                resolve(__dirname, 'src/components/contacts'),
+                resolve(__dirname, 'src/components/header'),
                 resolve(__dirname, 'src/components/footer'),
+                resolve(__dirname, 'src/components/subscriber'),
+
+
+
 
 
             ],
             context: {
                 walletImages: [
-                    'src/assets/images/icons/visa.svg',
-                    'src/assets/images/icons/masterCard.svg',
-                    'src/assets/images/icons/mir.svg',
-                    'src/assets/images/icons/sbp.svg',
+                    '/src/assets/images/icons/visa.svg',
+                    '/src/assets/images/icons/masterCard.svg',
+                    '/src/assets/images/icons/mir.svg',
+                    '/src/assets/images/icons/sbp.svg',
                 ],
                 trustList: [
                     'Более 14 лет на рынке – мы знаем всё о подключении частных домов и коттеджей.',
@@ -318,9 +312,63 @@ export default defineConfig({
                         caption: 'Wi-Fi камера с поворотом 360°. Можно не только смотреть, но и\n' +
                             'слушать.',
                         price: '3 750 ₽'
-                    }
+                    },
                 ],
                 equipmentInternet: [
+                    {
+                        img: '/src/assets/images/equipment__item-img.png',
+                        title: 'Терминал C-DATA xPON ONT FD511G-X-APC',
+                        caption: 'Технология MU-MIMO гарантирует быструю передачу файлов в хорошем качестве и возможность играть в онлайн-игры без задержек.',
+                        price: '1 990 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/equipment__item-img.png',
+                        title: 'Терминал C-DATA xPON ONT FD511G-X-APC',
+                        caption: 'Технология MU-MIMO гарантирует быструю передачу файлов в хорошем качестве и возможность играть в онлайн-игры без задержек.',
+                        price: '1 990 ₽'
+                    },
+                ],
+                equipmentAll:[
+                    {
+                        img: '/src/assets/images/video_item.png',
+                        title: 'Polyvision 2Мп PVC-IP2S-NF2.8',
+                        caption: 'Wi-Fi камера с поворотом 360°. Можно не только смотреть, но и\n' +
+                            'слушать.',
+                        price: '3 750 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/video_item.png',
+                        title: 'Polyvision PVC-IP2S-D1F2.8',
+                        caption: 'Wi-Fi камера с поворотом 360°. Можно не только смотреть, но и\n' +
+                            'слушать.',
+                        price: '3 750 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/equipment__item-img.png',
+                        title: 'Терминал C-DATA xPON ONT FD511G-X-APC',
+                        caption: 'Технология MU-MIMO гарантирует быструю передачу файлов в хорошем качестве и возможность играть в онлайн-игры без задержек.',
+                        price: '1 990 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/equipment__item-img.png',
+                        title: 'Терминал C-DATA xPON ONT FD511G-X-APC',
+                        caption: 'Технология MU-MIMO гарантирует быструю передачу файлов в хорошем качестве и возможность играть в онлайн-игры без задержек.',
+                        price: '1 990 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/video_item.png',
+                        title: 'Polyvision 2Мп PVC-IP2S-NF2.8',
+                        caption: 'Wi-Fi камера с поворотом 360°. Можно не только смотреть, но и\n' +
+                            'слушать.',
+                        price: '3 750 ₽'
+                    },
+                    {
+                        img: '/src/assets/images/video_item.png',
+                        title: 'Polyvision PVC-IP2S-D1F2.8',
+                        caption: 'Wi-Fi камера с поворотом 360°. Можно не только смотреть, но и\n' +
+                            'слушать.',
+                        price: '3 750 ₽'
+                    },
                     {
                         img: '/src/assets/images/equipment__item-img.png',
                         title: 'Терминал C-DATA xPON ONT FD511G-X-APC',
@@ -374,7 +422,7 @@ export default defineConfig({
                         second: "новым",
                         third: "абонентам",
                         img: "/src/assets/images/promotions_1.png",
-                        link: "#"
+                        link: "src/pages/discountItem.html"
                     },
                     {
                         partial: "promotion-additional",
@@ -382,7 +430,7 @@ export default defineConfig({
                         second: "Подключение бесплатно",
                         third: "Всё включено",
                         img: "/src/assets/images/promotions_2.png",
-                        link: "#"
+                        link: "src/pages/discountItem.html"
                     },
                     {
                         partial: "promotion-item",
@@ -390,7 +438,7 @@ export default defineConfig({
                         second: "новым",
                         third: "абонентам",
                         img: "/src/assets/images/promotions_1.png",
-                        link: "#"
+                        link: "src/pages/discountItem.html"
                     }
                 ],
                 showcaseNews: [
@@ -463,8 +511,6 @@ export default defineConfig({
                         coords: [51.83941107218678, 107.60309749999998]
                     }
                 ],
-
-
                 channels: [
                     {
                         key: "all",
@@ -553,7 +599,19 @@ export default defineConfig({
                             "/src/assets/images/channels_8.png"
                         ]
                     },
-                ]
+                ],
+                subscriberCards: [
+                    {
+                        title: 'Онлайн-чаты',
+                        caption: 'Напишите нам в чате на сайте или в Личном кабинете',
+
+                    },
+                    {
+                        title: 'Социальные сети',
+                        caption: 'Подпишитесь на нашу группу в vk – узнавайте новости, задавайте вопросы',
+
+                    }
+                ],
 
             },
             helpers: {

@@ -1,8 +1,7 @@
 @use '@/styles/common/variables';
 
 .tariffs {
-  margin-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
-
+  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -101,8 +100,7 @@
 }
 
 .tariffs__additional {
-  margin-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
-
+  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
   &-wrapper {
     display: flex;
     flex-direction: column;
@@ -203,71 +201,79 @@
   }
 }
 
-////Стили для страницы тарифов
-//
-//.tariffs__tabs {
-//  padding-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
-//
-//  &-wrapper {
-//    display: flex;
-//    flex-direction: column;
-//    gap: 30px;
-//  }
-//
-//  &-inner {
-//    display: flex;
-//    align-items: center;
-//    gap: 20px;
-//
-//    &-tab {
-//
-//      height: 90px;
-//      display: flex;
-//      align-items: center;
-//      justify-content: center;
-//      gap: 34px;
-//      border-radius: 20px;
-//      background-color: #F2F3F7;
-//      color: #29316F;
-//      font-family: variables.$Raleway;
-//      padding: 19px;
-//      font-size: 14px;
-//      font-style: normal;
-//      font-weight: 600;
-//      line-height: normal;
-//      text-transform: uppercase;
-//      transition: background-color variables.$time ease, color variables.$time ease;
-//
-//      &-img {
-//        display: block;
-//      }
-//
-//
-//      &.active {
-//        background-color: #29316F;
-//        color: #fff;
-//        transition: background-color variables.$time ease, color variables.$time ease;
-//
-//
-//      }
-//    }
-//  }
-//
-//  &-contents {
-//    & .tariffs {
-//      padding-top: 0;
-//
-//      & .tariffs__wrapper {
-//        display: block;
-//      }
-//    }
-//
-//    &-content {
-//      display: none;
-//
-//      &.active {
-//        display: block;
-//      }
-//    }
-//  }
-//}
+
+.tariffs__tabulations {
+  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &-tabs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &-tab {
+      width: max-content;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      border-radius: 20px;
+      background-color: #F2F3F7;
+      color: #29316F;
+      font-family: variables.$Raleway;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 16px 19px;
+      transition: background-color variables.$time ease, color variables.$time ease;
+
+      &-img {
+        display: block;
+      }
+
+      &.active {
+        background-color: #29316F;
+        color: #fff;
+      }
+    }
+  }
+
+  &-contents {
+    &-content {
+      display: none;
+
+      & .tariffs__additional {
+        margin-top: 0;
+
+        &-wrapper {
+          padding: 0;
+        }
+
+        &-link {
+          display: none;
+
+          &.desktop {
+            display: none;
+          }
+
+          &.mobile {
+            display: none;
+          }
+        }
+      }
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+

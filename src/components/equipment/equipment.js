@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tabButtons  = document.querySelectorAll('.tariffs__tabulations-tabs-tab');
-    const tabContents = document.querySelectorAll('.tariffs__tabulations-contents-content');
+    const tabButtons  = document.querySelectorAll('.equipment__tabulations-tabs-tab');
+    const tabContents = document.querySelectorAll('.equipment__tabulations-contents-content');
 
     if (!tabButtons.length || !tabContents.length) return;
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             const target  = btn.dataset.tab;
-            const content = document.querySelector(`.tariffs__tabulations-contents-content[data-tab="${target}"]`);
+            const content = document.querySelector(`.equipment__tabulations-contents-content[data-tab="${target}"]`);
 
             if (!content) return;
 

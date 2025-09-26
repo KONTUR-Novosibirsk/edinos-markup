@@ -5,10 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Главная страница</title>
+    <title>О компании</title>
 </head>
-
-
 <body>
 <div class="wrapper">
     {{> header}}
@@ -23,29 +21,15 @@
         pagination="banner__pagination"
         }}
         {{>site-search}}
-        {{>activities}}
-        {{>billing class="billing__wrapper"}}
-        {{>tariffs-main link="src/pages/tariffs.html"}}
-        {{>search-cities}}
+        {{>tariffs-tabs}}
+        {{>promo-banner title="Цифровое телевидение, онлайн-кинотеатры и быстрый интернет для дома в одном пакете
+        " }}
 
-        {{>showcase-slider
-        prev="promotion__prev"
-        next="promotion__next"
-        title="Акции и спецпредложения"
-        slider-name="promotion__slider"
-        slide-name="promotion__slider-slide"
-        slides=showcasePromotions
-        }}
-
-        {{>modalConnect}}
     </main>
     {{>footer}}
 
 </div>
 
 <script type="module" src="/src/main.js"></script>
-
 </body>
 </html>
-
-

@@ -29,6 +29,16 @@
       }
     }
   }
+
+  .tariffs__tabulations {
+    &-tabs {
+      flex-direction: column;
+
+      &-tab {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media(max-width: 576px) {

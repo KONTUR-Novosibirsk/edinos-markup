@@ -1,9 +1,9 @@
 //Открытие модалки "Подлкючиться"
 document.addEventListener('DOMContentLoaded', () => {
-    const bannerBtn = document.querySelectorAll('.banner__slider-slide-content-info-btn');
-    const promoBtn = document.querySelector('.promo__left-link');
-    const tariffsVideoBtns = document.querySelectorAll('.tariffs__video');
+    const bannerBtn = document.querySelectorAll('.banner__item-content-btn');
+    const promoBtn = document.querySelector('.promo__content-info-btn');
     const tariffsBtns = document.querySelectorAll('.tariffs__item-content-connect');
+    const tariffsVideoBtns = document.querySelectorAll('.tariffs__video-content-connect');
     const modalShadow = document.querySelector('.modal__connect');
     const modalWrapper = document.querySelector('.modal__connect-wrapper');
     const modalClose = document.querySelector('.modal__connect-close');
@@ -33,12 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tariffsBtns.length) {
         tariffsBtns.forEach(btn => btn.addEventListener('click', openModal));
     }
-    if (bannerBtn.length) {
-        bannerBtn.forEach(btn => btn.addEventListener('click', openModal));
-    }
     if (tariffsVideoBtns.length) {
         tariffsVideoBtns.forEach(btn => btn.addEventListener('click', openModal));
     }
+    if (bannerBtn.length) {
+        bannerBtn.forEach(btn => btn.addEventListener('click', openModal));
+    }
+
 
     modalClose.addEventListener('click', closeModal);
 
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //Открытие модалки вакансий
 document.addEventListener('DOMContentLoaded', () => {
     // ======= МОДАЛКА =======
-    const vacancyBtn = document.querySelectorAll('.vacancy__slider-slide-content-link');
+    const vacancyBtn = document.querySelectorAll('.vacancy__item-content-btn');
     const modalShadow = document.querySelector('.modal__vacancy');
     const modalWrapper = document.querySelector('.modal__vacancy-wrapper');
     const modalClose = document.querySelector('.modal__vacancy-close');

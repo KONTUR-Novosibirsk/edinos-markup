@@ -1,8 +1,7 @@
 @use '@/styles/common/variables';
 
 .billing {
-  margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
-
+  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
   &__wrapper {
     display: flex;
     flex-direction: column;

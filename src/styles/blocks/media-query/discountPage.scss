@@ -1,0 +1,13 @@
+@media(max-width: 992px) {
+  .discount__description {
+
+
+    &-body, &-footer {
+      gap: 16px;
+    }
+
+    &-heading {
+      gap: 24px;
+    }
+  }
+}

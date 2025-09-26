@@ -5,10 +5,10 @@
 //Базовый слайдер - используется в Баннер и Вакансии
 .base__slider {
   margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
-
   &.banner {
     margin-top: 0;
   }
+
   &-wrapper {
     display: flex;
     flex-direction: column;
@@ -27,11 +27,13 @@
 
   &-content {
     position: relative;
+
     & .swiper {
       width: 100%;
       min-height: 440px;
       height: 440px;
     }
+
     & .swiper-slide {
       width: 100%;
       height: 100%;
@@ -80,8 +82,7 @@
 
 //Стили универсального слайдера лдя акций и новостей
 .showcase {
-  margin-top: clamp(1.5rem, 1.197rem + 1.35vw, 2.813rem);
-
+  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -109,7 +110,6 @@
       height: clamp(23.75rem, 23.462rem + 1.28vw, 25rem);
     }
   }
-
 
 
 }
@@ -197,3 +197,94 @@
   }
 }
 
+//Слайдер на внутреней странице оборудование
+
+.equipment__item-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 765px;
+  width: 100%;
+
+  &-main {
+    position: relative;
+    width: 100%;
+    height: clamp(16.25rem, 8.966rem + 32.37vw, 47.813rem);
+
+    & .swiper {
+      width: 100%;
+      height: 100%;
+
+      & .swiper-slide {
+        width: 100%;
+        height: 100%;
+
+        &-img {
+          width: 100%;
+          height: 100%;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  &-thumbs {
+    width: 100%;
+    height: 107px;
+
+    & .swiper {
+      width: 100%;
+      height: 100%;
+
+      & .swiper-slide {
+        flex: 0 0 111px;
+        height: 100%;
+
+        &-img {
+          width: 100%;
+          height: 100%;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+
+  &-pagination {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    & span {
+      max-width: 32px;
+      width: 100%;
+      height: 4px;
+      border-radius: 5px;
+      background-color: #E4E4E4;
+      transition: background-color variables.$time ease;
+
+      &.swiper-pagination-bullet-active {
+        background: #29316F;
+      }
+    }
+  }
+}
