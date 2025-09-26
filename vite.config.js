@@ -4,6 +4,7 @@ import {fileURLToPath, URL} from 'node:url';
 import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
+    base:'/edinos-markup/',
     build: {
         rollupOptions: {
             input: {
