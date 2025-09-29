@@ -4,7 +4,8 @@
 
 //Базовый слайдер - используется в Баннер и Вакансии
 .base__slider {
-  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
+  margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
+
   &.banner {
     margin-top: 0;
   }
@@ -82,7 +83,8 @@
 
 //Стили универсального слайдера лдя акций и новостей
 .showcase {
-  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
+  margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -134,10 +136,14 @@
 //Стили для слайдеа каналов
 
 .tabs__slider {
+  border-bottom: 2px solid #FFE8D9;
+  padding-bottom: 16px;
 
 
   &-slide {
+    position: relative;
     width: max-content;
+    cursor: pointer;
 
 
     &-content {
@@ -150,6 +156,27 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+      }
+    }
+
+
+    &::after {
+      opacity: 0;
+      content: '';
+      position: absolute;
+      bottom: -18px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #F60;
+      transition: opacity variables.$time ease;
+    }
+
+    &.active {
+      &::after {
+        opacity: 1;
+        transition: opacity variables.$time ease;
       }
     }
 

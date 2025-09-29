@@ -95,10 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modules: [Navigation],
         spaceBetween: 46,
         watchOverflow: true,
-        navigation: {
-            nextEl: '.tabs__slider-next',
-            prevEl: '.tabs__slider-prev',
-        }
+
 
     });
 

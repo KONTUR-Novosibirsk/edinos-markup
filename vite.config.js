@@ -15,7 +15,7 @@ export default defineConfig({
                 subscriber: resolve(__dirname, 'src/pages/subscriber.html'),
                 internet: resolve(__dirname, 'src/pages/internet.html'),
                 tv: resolve(__dirname, 'src/pages/tv.html'),
-                VideoSurveillance: resolve(__dirname, 'src/pages/VideoSurveillance.html'),
+                videoSurveillance: resolve(__dirname, 'src/pages/VideoSurveillance.html'),
                 tariffs: resolve(__dirname, 'src/pages/tariffs.html'),
                 contacts: resolve(__dirname, 'src/pages/contacts.html'),
                 discountItem: resolve(__dirname, 'src/pages/discountItem.html'),
@@ -25,7 +25,9 @@ export default defineConfig({
             output: {
                 entryFileNames: '[name].js',
                 chunkFileNames: '[name].js',
-                assetFileNames: '[name].[ext]'
+                assetFileNames: '[name].[ext]',
+                manualChunks: undefined
+
             }
         },
     },
@@ -601,6 +603,7 @@ export default defineConfig({
                             "/src/assets/images/channels_8.png"
                         ]
                     },
+
                 ],
                 subscriberCards: [
                     {
