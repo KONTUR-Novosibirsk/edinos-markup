@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.toggle('active')
         mobileBtn.classList.toggle('active')
         headerWrapper.classList.toggle('active')
+        document.body.style.overflow = 'hidden'
 
     }
 
@@ -75,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.remove('active');
         mobileBtn.classList.remove('active');
         headerWrapper.classList.remove('active');
+        document.body.style.overflow = ''
+
     };
 
 

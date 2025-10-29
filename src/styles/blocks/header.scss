@@ -238,7 +238,8 @@
       transform: translateX(100%);
       pointer-events: none;
       transition: opacity variables.$time ease, transform variables.$time ease, visibility 0s linear variables.$time;
-
+      max-height: calc(100vh - 100px); // ограничение по экрану, но не фикс
+      overflow-y: auto;
       &-nav {
         margin-top: 24px;
 

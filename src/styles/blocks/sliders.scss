@@ -43,6 +43,11 @@
 
     }
   }
+
+  &-vacancy {
+    min-height: auto !important;
+    height: auto !important;
+  }
 }
 
 //Стили для слайдера в секции тарифы
