@@ -14,7 +14,6 @@
     order: 1;
   }
 
-
   .contacts__info {
     order: 2;
   }
@@ -37,6 +36,10 @@
 
     &-form {
       max-width: 100%;
+
+      &-fields {
+        flex-direction: column;
+      }
     }
   }
 }

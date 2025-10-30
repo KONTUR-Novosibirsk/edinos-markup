@@ -15,7 +15,12 @@
     }
   }
 
+  .equipment__slider {
+    margin-bottom: 32px;
+  }
   .equipment__item-slider {
+    margin-bottom: 24px;
+
     &-pagination {
       display: flex;
     }
