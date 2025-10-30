@@ -1,7 +1,7 @@
 @use '@/styles/common/variables';
 
 .footer {
-  margin-top:clamp(3rem, 2.538rem + 2.05vw, 5rem);
+  margin-top: clamp(3rem, 2.538rem + 2.05vw, 5rem);
   padding-bottom: clamp(0rem, -0.346rem + 1.54vw, 1.5rem);
 
   &__wrapper {
@@ -47,7 +47,7 @@
           align-items: center;
           gap: 18px;
 
-          &-city, &-message {
+          &-link {
             display: flex;
             align-items: center;
             gap: 18px;
@@ -58,28 +58,40 @@
             font-style: normal;
             font-weight: 400;
             line-height: 20.48px;
+            &-img {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 40px;
+              height: 40px;
+              flex-shrink: 0;
+              border-radius: 50%;
+              border: 1px solid rgba(251, 251, 251, 0.20);
+            }
 
-          }
-
-          &-links {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-
-            & a {
-              color: #FFF;
-              font-variant-numeric: lining-nums proportional-nums;
-              font-family: variables.$Raleway;
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 20.48px;
-
+            &-wrapper {
+              display: flex;
+              flex-direction: column;
+              gap: 4px;
               & span {
-                font-weight: 700;
+                color: #FFF;
+                font-variant-numeric: lining-nums proportional-nums;
+                font-family: variables.$Raleway;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20.48px;
+                & span {
+                  font-weight: 700;
+                }
               }
             }
+
           }
+
+
+
+
         }
       }
 
@@ -157,6 +169,7 @@
         width: 181px;
         height: 48px;
         transition: background-color variables.$time ease;
+
         &:hover {
           background-color: #FF822E;
         }
